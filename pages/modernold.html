@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benzaiten - Modern Old</title>
+  <link rel="stylesheet" href="/styles/style_general.css">
+  <link rel="stylesheet" href="/styles/style_article.css">
+
+  <style>
+  .off-screen-menu {
+      background-color: rgb(100, 60, 0);
+  }
+  .menu-list a:hover {
+      color: rgb(255, 220, 100);
+  }
+  .menu-list a {
+      color: antiquewhite;
+  }
+  .ham-menu span {
+      background-color: rgb(100, 60, 0);
+  }
+  .scrolled .ham-menu span {
+      background-color: blanchedalmond;
+  }
+  .welcometobenzaitencontainer {
+    background-image: url('/images/modernold.png');
+  }
+  </style>
+</head>
+
+<header>
+  <div class="off-screen-menu">
+    <ul class="menu-list">
+      <li><a href="home.html" data-i18n="nav_home"></a></li>
+      <li><a href="welcome.html" data-i18n="nav_about"></a></li>
+      <li><a href="https://www.instagram.com/benzaitenmusicblog/" data-i18n="nav_contact"></a></li>
+    </ul>
+  </div>
+
+  <div class="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<body>
+
+<div class="welcometobenzaitencontainer">
+  <h1 style="font-family: aresmodernos; font-size: 10vw;">Modern Old</h1>
+</div>
+
+<h3 data-i18n="date"></h3>
+
+<div class="welcometobenzaitentextcontainer">
+  <p data-i18n="p1"></p>
+  <div class="sampleclip"><iframe width="300" height="236.25" src="https://www.youtube.com/embed/jmcRc1NoxTg?si=bJTjX8TuG4wpIpBp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <p data-i18n="p2"></p>
+</div>
+
+<div class="button-container">
+  <button id="nextbutton" onclick="location.href='BDB.html'" data-i18n="next"></button>
+  <button id="previousbutton" onclick="location.href='northernpele.html'" data-i18n="prev"></button>
+</div>
+
+<section class="comments-section">
+  <h2 data-i18n="comments_title"></h2>
+
+  <form class="comments-form">
+    <div class="form-group">
+      <label for="name" data-i18n="label_name"></label>
+      <input type="text" id="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment" data-i18n="label_comment"></label>
+      <textarea id="comment" rows="5" required></textarea>
+    </div>
+
+    <button id="submitbutton" data-i18n="submit"></button>
+  </form>
+</section>
+
+<script>
+const translations = {
+  en: {
+    nav_home: "Home",
+    nav_about: "About",
+    nav_contact: "Contact",
+
+    title: "Modern Old",
+    date: "Posted on March 27, 2025",
+
+    p1: "ModernOld: Tokyo's Genre-Defying Electronic Dance Rock Duo. Emerging from Japan's vibrant music scene, ModernOld is an electronic dance rock duo that has been captivating audiences with their eclectic sound and dynamic performances. Formed in May 2024, the duo comprises Ryutaro Kawakami (bass and vocals) from Ehime Prefecture and Godai Nagao (beats and guitar) from Tokushima Prefecture. Their music seamlessly blends influences from British rock legends like The Beatles and Oasis with a myriad of other genres, resulting in a versatile and danceable style that defies traditional categorization. In April 2024, ModernOld released their debut single, 'Turn On (Pt.1&2),' a six-minute track that showcases their ability to fuse electronic beats with rock instrumentation. This release was followed by their self-titled first album in May 2024, further establishing their presence in the Japanese music landscape. Their genre-fluid approach and commitment to creating 'danceable music' have garnered them a diverse fanbase. Beyond their musical endeavors, the members have unique personal interests that add depth to their artistic personas. Kawakami is known for his passion for stone collecting, while Nagao has a deep affection for animals. These individual pursuits contribute to the duo's distinctive identity within the music industry. Here is a clip of them playing their song '90's dancefloor':",
+    p2: "Currently active in the Tokyo and Kanagawa areas, ModernOld continues to push the boundaries of electronic dance rock, inviting listeners to experience their innovative and energetic soundscapes.",
+
+    next: "NEXT",
+    prev: "PREVIOUS",
+
+    comments_title: "Leave a Comment",
+    label_name: "Name:",
+    label_comment: "Comment:",
+    submit: "Submit",
+  },
+
+  jp: {
+    nav_home: "ホーム",
+    nav_about: "当サイトについて",
+    nav_contact: "お問い合わせ",
+
+    title: "Modern Old",
+    date: "2025年3月27日 投稿",
+
+    p1: "ModernOld: 東京発のジャンルを超えたエレクトロ・ダンス・ロック・デュオ。日本の活気ある音楽シーンから登場したModernOldは、エレクトロ・ダンス・ロック・デュオとして、その独創的なサウンドとダイナミックなパフォーマンスで観客を魅了している。2024年5月に結成されたこのデュオは、愛媛県出身の川上龍太郎（ベース・ボーカル）と、徳島県出身の長尾五大（ビート・ギター）で構成されている。彼らの音楽は、The BeatlesやOasisといったイギリスのロックレジェンドの影響を受けつつも、さまざまなジャンルを取り入れた独自のスタイルを持ち、ダンサブルでありながら型にはまらないサウンドを生み出している。2024年4月には、6分に及ぶデビューシングル「Turn On (Pt.1&2)」をリリース。エレクトロニックなビートとロックの要素が融合したこの楽曲は、彼らの音楽性を象徴する作品となった。続く2024年5月には、セルフタイトルの1stアルバム『ModernOld』を発表し、日本の音楽シーンでの存在感を確立。彼らの「踊れる音楽」へのこだわりは、多様なファン層を惹きつけている。音楽活動だけでなく、メンバーそれぞれの個性的な趣味も彼らの魅力の一部となっている。川上はストーンコレクターとしての一面を持ち、長尾は動物好きとして知られている。こうした個性が合わさることで、ModernOldは他にはない独自のアイデンティティを築いている。こちらは「90's dancefloor」を演奏している様子：",
+    p2: "現在、東京や神奈川を拠点に活動するModernOldは、エレクトロ・ダンス・ロックの枠を超えた革新的なサウンドを追求し続け、リスナーに新たな音楽体験を提供している。",
+
+    next: "次へ",
+    prev: "前へ",
+
+    comments_title: "コメントをする",
+    label_name: "名前：",
+    label_comment: "コメント：",
+    submit: "送信"
+  }
+};
+
+const lang = localStorage.getItem("lang") || "en";
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  el.textContent = translations[lang][el.dataset.i18n];
+});
+
+</script>
+<script src="/script.js"></script>
+
+</body>
+</html>

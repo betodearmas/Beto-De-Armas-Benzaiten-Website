@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benzaiten - Konnichiwa Typhoon</title>
+  <link rel="stylesheet" href="/styles/style_general.css">
+  <link rel="stylesheet" href="/styles/style_article.css">
+
+  <style>
+  .off-screen-menu {
+      background-color: rgb(0, 100, 60);
+  }
+  .menu-list a:hover {
+      color: rgb(255, 220, 0);
+  }
+  .menu-list a {
+      color: antiquewhite;
+  }
+  .ham-menu span {
+      background-color: rgb(0, 100, 60);
+  }
+  .scrolled .ham-menu span {
+      background-color: blanchedalmond;
+  }
+  .welcometobenzaitencontainer {
+    background-image: url('/images/KT.webp');
+  }
+  </style>
+</head>
+
+<header>
+  <div class="off-screen-menu">
+    <ul class="menu-list">
+      <li><a href="home.html" data-i18n="nav_home"></a></li>
+      <li><a href="welcome.html" data-i18n="nav_about"></a></li>
+      <li><a href="https://www.instagram.com/benzaitenmusicblog/" data-i18n="nav_contact"></a></li>
+    </ul>
+  </div>
+
+  <div class="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<body>
+
+<div class="welcometobenzaitencontainer">
+  <h1 style="font-family: firstwave;">Konnichiwa Typhoon</h1>
+</div>
+
+<h3 data-i18n="date"></h3>
+
+<div class="welcometobenzaitentextcontainer">
+  <p data-i18n="p1"></p>
+  <div class="sampleclip"><iframe width="300" height="234.15" src="https://www.youtube.com/embed/br4QYOCJITA?si=e45axg8Oi4sbecgr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <p data-i18n="p2"></p>
+</div>
+
+<div class="button-container">
+  <button id="nextbutton" onclick="location.href='northernpele.html'" data-i18n="next"></button>
+  <button id="previousbutton" onclick="location.href='theportal.html'" data-i18n="prev"></button>
+</div>
+
+<section class="comments-section">
+  <h2 data-i18n="comments_title"></h2>
+
+  <form class="comments-form">
+    <div class="form-group">
+      <label for="name" data-i18n="label_name"></label>
+      <input type="text" id="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment" data-i18n="label_comment"></label>
+      <textarea id="comment" rows="5" required></textarea>
+    </div>
+
+    <button id="submitbutton" data-i18n="submit"></button>
+  </form>
+</section>
+
+<script>
+const translations = {
+  en: {
+    nav_home: "Home",
+    nav_about: "About",
+    nav_contact: "Contact",
+
+    title: "Konnichiwa Typhoon",
+    date: "Posted on February 20, 2025",
+
+    p1: "Konnichiwa Typhoon: Tokyo's Indie Rock Storm & the most chill party band you've ever seen. Emerging from the heart of Tokyo's vibrant music scene, Konnichiwa Typhoon is an indie rock band that has been making waves since its formation in late 2020. The band is led by Peter Jens, a Chicago-born singer-songwriter and guitarist, alongside guitarist Ryo Typhoon, bassist Tsubo Typhoon, and drummer Ito 'Big Hisa' Typhoon. A unique sound with global influences, Konnichiwa Typhoon blends elements of indie, slacker rock, and funk, creating a sound that fuses urban cool with garage rock energy. Their music channels influences from Western alternative rock while maintaining a distinct Tokyo edge. Since their formation, they have built a reputation through energetic live performances in local venues and a steady stream of online releases. The band has released several singles, including 'New Age', 'Relax!', 'Pursuit of Perfection', and 'Odori' among others. Their music is available on major streaming platforms like Spotify, Apple Music, and YouTube, where they have gained an international following. In August 2023, Konnichiwa Typhoon performed at 7th Floor Shibuya as part of the More Tokyo Music event, delivering a high-energy set that captivated audiences, as usual. They are very active so you can definitely go see them to enjoy the best party music ever. Here is a clip of them performing 'DMs' at Tokyo Moon Romantic:",
+    p2: "A New Chapter — Recently, the band welcomed Takeshi on keyboards, adding a fresh dimension to their evolving sound. With their genre-blending approach and passionate performances, Konnichiwa Typhoon continues to establish itself as a standout act in Tokyo's indie music scene. Konnichiwa Typhoon is just getting started, and if their latest releases are any indication, they're set to take their sound to even greater heights. Keep an eye on them — they're a storm worth watching.",
+
+    next: "NEXT",
+    prev: "PREVIOUS",
+
+    comments_title: "Leave a Comment",
+    label_name: "Name:",
+    label_comment: "Comment:",
+    submit: "Submit",
+  },
+
+  jp: {
+    nav_home: "ホーム",
+    nav_about: "当サイトについて",
+    nav_contact: "お問い合わせ",
+
+    title: "Konnichiwa Typhoon",
+    date: "2025年2月20日 投稿",
+
+    p1: "東京を拠点に活動するインディーロックバンド「Konnichiwa Typhoon」は、2020年後半に結成されました。シカゴ出身のリードシンガー兼ギタリスト、ピーター・ジェンス（Peter Jens）を中心に、ギタリストのリョウ・タイフーン（Ryo Typhoon）、ベーシストのツボ・タイフーン（Tsubo Typhoon）、ドラマーのイトウ「ビッグ・ヒサ」タイフーン（Ito 'Big Hisa' Typhoon）で構成されています。彼らの音楽は、インディー、スラッカー・ロック、ファンクなど多様なジャンルから影響を受けており、都会的な雰囲気とガレージロックの精神を融合させた独特のサウンドが特徴です。結成以来、地元のライブハウスでの精力的なパフォーマンスや、オンラインでの音楽配信を通じて、国内外のリスナーから注目を集めています。2024年7月21日にはシングル「New Age」をリリースし、これまでに「Relax!」（2024年）、「Pursuit of Perfection」（2023年）、「Odori」（2023年）などのシングルも発表しています。また、2023年8月25日には渋谷のライブハウス「7th Floor」で開催されたイベント「More Tokyo Music」に出演し、観客を魅了しました。彼らはとてもアクティブなので、最高のパーティー・ミュージックを楽しむために、ぜひ会いに行ってほしい。こちらはMoon Romanticで「DMs」を演奏している様子：",
+    p2: "最近では、新メンバーとしてキーボーディストのタケシ（Takeshi）が加入し、バンドの音楽性に新たな彩りを加えています。Konnichiwa Typhoonの音楽は、Apple MusicやSpotifyなどの主要な音楽配信サービスで聴くことができ、公式YouTubeチャンネルではライブパフォーマンスの映像も公開されています。多文化が交差する東京の音楽シーンで、Konnichiwa Typhoonは独自のスタイルを確立し、彼らは注目に値する嵐だ。",
+
+    next: "次へ",
+    prev: "前へ",
+
+    comments_title: "コメントをする",
+    label_name: "名前：",
+    label_comment: "コメント：",
+    submit: "送信"
+  }
+};
+
+const lang = localStorage.getItem("lang") || "en";
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  el.textContent = translations[lang][el.dataset.i18n];
+});
+
+</script>
+<script src="/script.js"></script>
+
+</body>
+</html>

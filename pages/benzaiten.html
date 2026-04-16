@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BENZAITEN</title>
+    <link rel="stylesheet" href="/styles/style_index.css">
+</head>
+<body>
+    <div class="landing-container">
+        <img src="/images/welcomelogo.png" class="welcomelogo">
+        <div class="button-container">
+            <a href="home.html" class="landing-button" onclick="localStorage.setItem('lang','en')">English</a>
+            <a href="home.html" class="landing-button" onclick="localStorage.setItem('lang','jp')">日本語</a>
+        </div>
+    </div>
+
+<script>
+    function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    }
+</script>
+</body>
+</html>

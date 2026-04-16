@@ -1,0 +1,555 @@
+/*HOME*/
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: blanchedalmond;
+}
+img {
+ width: 220px;
+ display: block;
+ margin: auto;
+}
+.headerContainer {
+ text-align: center;
+}
+h1 {
+ font-family: 'Lucida Grande';
+ font-style: bold;
+ font-size: 10vw;
+ margin: 0;
+}
+.subheaderContainer {
+ text-align: center;
+ font-size: 2.5vw;;
+}
+h2 {
+ font-family: AmericanTypewriter;
+ font-weight: lighter;
+ color: rgb(170, 170, 170);
+ margin-top: 0;
+}
+
+
+/*OFF-SCREEN MENU*/
+.off-screen-menu {
+    background-color: rgb(176, 57, 79);
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: 0.4s ease;
+    z-index: 999;
+}
+.off-screen-menu ul.menu-list {
+    list-style-type: none; /* Remove bullet points */
+}
+.menu-list a:hover {
+    color: black;
+}
+.menu-list a {
+    color: antiquewhite;
+    font-family: AmericanTypewriter;
+    text-decoration: none;
+}
+.off-screen-menu.active {
+    right: 0;
+}
+nav {
+    padding: 1rem; 
+    display: flex;
+}
+
+
+/*HAM MENU*/
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    right: 20px;
+    position: fixed;
+    z-index: 999;
+    cursor: pointer;
+}
+.ham-menu span {
+    height: 5px; 
+    width: 100%;
+    background-color: black;
+    border-radius: 25px; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s ease;
+}
+.scrolled .ham-menu span {
+    background-color:blanchedalmond; /* Color when scrolled */
+}
+.ham-menu span:nth-child(1){
+    top: 25%;
+}
+.ham-menu span:nth-child(3){
+    top: 75%;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: .2s ease;
+}
+.ham-menu.active span:nth-child(2) {
+   opacity: 0%;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-90deg);
+    transition: .2s ease;
+}
+
+
+/*POP-UP*/
+.popup {
+    display: none; 
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    position: relative;
+    background-color: rgb(176, 57, 79); 
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.close {
+    position:absolute;
+    top: 0px;
+    right: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    color: antiquewhite;
+}
+input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+#subscribeSubmit {
+    padding: 10px 20px;
+    background-color: rgb(176, 57, 79); 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-family: AmericanTypewriter;
+}
+#subscribeSubmit:hover {
+    background-color: goldenrod;
+}
+
+
+/*=====================*/
+/*BAND ARTICLE SECTIONS*/
+/*=====================*/
+/*BLACK DOOR BLUES*/
+.BDBContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/BDB.JPG');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.BDBText {
+    position: absolute;
+    top: 30%; 
+    left: 15%;
+    color: white; 
+    font-size: 12vw; 
+    font-family: MexicanWedding;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+    text-decoration: none;
+}
+.BDBText:hover {
+    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
+    color: rgb(118, 0, 21); /* Change text color on hover */
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+/*MODERN OLD*/
+.MODERNOLDContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/modernold.png');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.MODERNOLDText {
+    position: absolute;
+    top: 30%; 
+    left: 15%;
+    color: white; 
+    font-size: 12vw; 
+    font-family: aresmodernos;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+    text-decoration: none;
+}
+.MODERNOLDText:hover {
+    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
+    color: rgb(176, 34, 61); /* Change text color on hover */
+    text-shadow: 5px 5px 5px rgba(62, 129,176);
+}
+
+/*NORTHERN PELE*/
+.NORTHERNPELEContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/NorthernPele.jpeg');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.NORTHERNPELEText {
+    position: absolute;
+    top: 30%; 
+    left: 15%;
+    color: white; 
+    font-size: 6vw; 
+    font-family: theshire;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+    text-decoration: none;
+}
+.NORTHERNPELEText:hover {
+    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
+    color: rgb(0, 171, 214); /* Change text color on hover */
+    text-shadow: 5px 5px 5px rgb(255, 255, 255);
+}
+
+/*KONNICHIWA TYPHOON*/
+.KONNICHIWATYPHOONContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/KT.webp');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.KONNICHIWATYPHOONText {
+    position: absolute;
+    top: 30%; 
+    left: 30%;
+    color: white; 
+    font-size: 8vw; 
+    font-family: firstwave;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+    text-decoration: none;
+}
+.KONNICHIWATYPHOONText:hover {
+    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
+    color: rgb(255, 230, 0); /* Change text color on hover */
+    text-shadow: 5px 5px 5px rgb(255, 145, 0)
+}
+
+/*THE PORTAL*/
+.THEPORTALContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/THEPORTAL.jpg');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.THEPORTALText {
+    position: absolute;
+    top: 35%; 
+    left: 32%;
+    color: white; 
+    font-size: 5vw; 
+    font-family: FreedomChanges;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+    text-decoration: none;
+}
+.THEPORTALText:hover {
+    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
+    color: rgb(63, 41, 25); /* Change text color on hover */
+    text-shadow: 5px 5px 5px rgb(26, 112, 36)
+}
+
+/*VAIWATT*/
+.VAIWATTContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/Vaiwatt-2021-photo-by-Anna-Shivarnova.webp');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.VAIWATTText {
+    position: absolute;
+    top: 40%; 
+    left: 55%;
+    color: white; 
+    font-size: 7vw; 
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+.VAIWATTText:hover {
+    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
+    color: rgb(255, 153, 241); /* Change text color on hover */
+    text-shadow: 5px 5px 5px rgb(2, 0, 71)
+}
+
+/*FUQA*/
+.FUQAContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/FUQA.jpg');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.FUQAText {
+    position: absolute;
+    top: 25%; 
+    left: 25%;
+    color: white; 
+    font-size: 7vw; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+.FUQAText:hover {
+    transform: translate(10px, 10px); 
+    color: rgb(255, 0, 0);
+    text-shadow: 5px 5px 5px rgb(4, 0, 134)
+}
+
+/*WELCOME TO BENZAITEN*/
+.welcomeToBenzaitenContainer {
+    width: 100%;
+    display: flex;
+    height: auto; /* Adjust this height as needed */
+    padding-top: 50vh;
+    position: relative; /* Set the container to relative position */
+    background-image: url('/images/welcometobenzaiten.jpg');
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center center; /* Center the image */
+    overflow: hidden;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+} 
+.welcomeToBenzaitenText {
+    position: absolute;
+    top: 26%;
+    left: 15%;
+    color: white; 
+    font-size: clamp(5vw,5vw,7vw);
+    font-family: AmericanTypewriter;
+    font-weight: 600;
+    text-align: center center;
+    justify-content: center center;
+    align-items: center center;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+.welcomeToBenzaitenText:hover {
+    transform: scale(1.1); 
+}
+
+
+/*===========*/
+/*ADDED FONTS*/
+/*===========*/
+@font-face {
+    font-family: 'AmericanTypewriter';
+    src: url(/fonts/americantypewriter.ttf);
+}
+@font-face {
+    font-family: 'Paytone';
+    src: url(/fonts/paytone.ttf);
+}
+@font-face {
+    font-family: 'FreedomChanges';
+    src: url(/fonts/freedomchanges.ttf);
+}
+@font-face {
+    font-family: 'firstwave';
+    src: url(/fonts/firstwave.otf);
+}
+@font-face {
+    font-family: 'theshire';
+    src: url(/fonts/theshire.ttf);
+}
+@font-face {
+    font-family: 'aresmodernos';
+    src: url(/fonts/aresmodernos.ttf);
+}
+@font-face {
+    font-family: 'MexicanWedding';
+    src: url(/fonts/MexicanWedding.ttf);
+}
+
+
+/*=====================*/
+/*======= MOBILE ======*/
+/*=====================*/
+@media screen and (max-width: 1024px) { 
+
+.off-screen-menu {
+    background-color: rgb(176, 57, 79);
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    position: fixed;
+    top: 0;
+    right: -350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: 0.4s ease;
+    z-index: 999;
+}
+.off-screen-menu.active {
+    right: 0;
+}
+.ham-menu {
+    height: 25px;
+    width: 25px;
+    top: 10px;
+    right: 20px;
+    position: fixed;
+    z-index: 999;
+    cursor: pointer;
+}
+.ham-menu span {
+    height: 3px; 
+    width: 100%;
+    background-color: black;
+    border-radius: 25px; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s ease;
+}
+.FUQAText {
+    color: rgb(255, 0, 0);
+    text-shadow: 5px 5px 5px rgb(4, 0, 134)
+}
+.VAIWATTText {
+    color: rgb(255, 153, 241); 
+    text-shadow: 5px 5px 5px rgb(2, 0, 71)
+}
+.THEPORTALText {
+    color: rgb(63, 41, 25);
+    text-shadow: 5px 5px 5px rgb(26, 112, 36)
+}
+.KONNICHIWATYPHOONText {
+    color: rgb(255, 230, 0);
+    text-shadow: 5px 5px 5px rgb(255, 149, 0)
+}
+.NORTHERNPELEText {
+    color: rgb(0, 171, 214);
+    text-shadow: 5px 5px 5px rgb(255, 255, 255)
+}
+.MODERNOLDText {
+    color:rgb(176, 34, 61);
+    text-shadow: 5px 5px 5px rgb(62, 129,176);
+}
+.BDBText{
+    color:rgb(118, 0, 21);
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+}

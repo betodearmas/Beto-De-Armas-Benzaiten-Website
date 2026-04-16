@@ -1,0 +1,340 @@
+@font-face {
+    font-family: reverie;
+    src: url(/fonts/REVERIE.otf);
+}
+body{
+  background-color: brown;
+}
+.hero-section {
+  background-image: url("/images/beto_bw.jpg");
+  background-position: center -100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  gap: 1rem;
+}
+.text-6xl{
+padding-top: 15vh;
+color: rgb(255, 246, 246);
+}
+#butterfly {
+    width: 200px
+}
+#hero-section-songs {
+    position: absolute;
+    display: contents;
+    justify-items: center;
+    bottom: 5vh;
+}
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    color: rgb(255, 246, 246);
+}
+a:hover {
+  color: brown;
+}
+
+
+/*Ham menu*/
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.hamburger.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(10%, 30%) rotate(140deg);
+    transition: .2s ease;
+}
+.hamburger.active span:nth-child(2) {
+   opacity: 0%;
+}
+.hamburger.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(10%, 30%) rotate(-140deg);
+    transition: .2s ease;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); /* Apply blur to background */
+  background-color: rgba(0, 0, 0, 0.4); /* Optional dark tint */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1000; /*top of the top*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.menu-content {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+.menu-content a {
+  display: block;
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.menu-content a:hover {
+  color: brown;
+}
+
+
+/* Red Bar Links */
+.menu-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  background-color: brown;
+  color: white;
+  font-family: sans-serif;
+  z-index: 100; /*top of everything except the ham menu overlay*/
+}
+.menu-box > * {
+  position: relative;
+  z-index: 2;
+}
+.menu-box {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease, color 0.5s ease;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 50;
+  z-index: 1;
+}
+.menu-box:not(.social-icons):hover .menu-box-text {
+  color: brown;
+  transform: color 0.5s ease;
+}
+.menu-box::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0%;
+  width: 100%;
+  background: white;
+  z-index: -1;
+  transition: height 0.5s ease;
+}
+.menu-box:not(.social-icons):hover::before {
+  height: 100%;
+}
+.social-icon:hover{
+  opacity: 0.8;
+}
+
+
+
+/* space out the icons */
+.social-icons a {
+  margin: 0 0.5rem;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: brown;
+}
+
+
+
+/*BTTSP section*/
+.BTTSP-section {
+position: relative;
+display: flex;
+width: auto;
+}
+#BTTSP-cover {
+position: relative;
+width: 33vw;
+height: auto;
+margin-top: 15vh;
+margin-left: 18vw;
+border: solid 1px white;
+}
+#BTTSP-link-list {
+position: relative;
+width: 28vw;
+margin-left: 5vw;
+margin-top: 8rem; 
+display:list-item;
+list-style: none;
+}
+.BTTSP-link-box {
+  position:relative;
+  display:flex;
+  text-align: left;
+  border-bottom: 2px solid transparent rgb(255, 246, 246);
+  padding-bottom: 13px;
+  padding-top: 13px;
+  gap: 1rem;
+}
+.BTTSP-link-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: brown; /* Change this to your desired color */
+  transition: width 0.4s ease;
+}
+.BTTSP-link-box:hover::after {
+  width: 75%;
+}
+.link-icon:hover {
+ color: brown;
+}
+
+
+
+/*live videos section*/
+#live-videos-section {
+  height: 100vh;
+  width: auto;
+  background-color: rgb(0, 0, 0);
+}
+#music-videos-title-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 80vw;
+  border-bottom: 2px solid white;
+  text-align: center;
+  margin-top: 8vh;
+  font-size: 3rem;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+.slide {
+  flex: 0 0 50vw;
+  scroll-snap-align: center;
+  overflow: hidden;
+  padding-top: 10vh;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+}
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+}
+footer{
+  text-align: center;
+  padding-top: 8vh;
+  padding-bottom: 2vh;
+  color: brown;
+}
+
+
+
+
+@media screen and (max-width: 768px) { 
+
+.hamburger {
+  top: 13px;
+  left: 8px;
+}
+#butterfly {
+  display: none;
+}
+#hero-section-songs {
+  display: none;
+}
+.menu-box {
+  font-size: 4vw;
+}
+.menu-box.social-icons{
+  display: none;
+}
+.BTTSP-section {
+  display: block;
+  height: max-content;
+}
+#BTTSP-cover {
+  position: absolute;
+  width: 80vw;
+  margin-top: 6vh;
+  margin-left: 10vw;
+  margin-bottom: 3vh;
+}
+#BTTSP-link-list{
+  margin-left: 10vw;
+  margin-top: 100vw;
+  display: inline-block;
+  width: 90vw;
+}
+#music-videos-section {
+height: 35vh;
+}
+#music-videos-title-container {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 5vh;
+}
+.slide {
+  flex: 0 0 75vw;
+  scroll-snap-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-top: 5vh;
+  padding-left: 5vw;
+}
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none; 
+}
+footer {
+  margin-top: 3vh;
+  font-size: 11px;
+}
+}

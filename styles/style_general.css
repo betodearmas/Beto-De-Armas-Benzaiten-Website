@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'AmericanTypewriter';
+    src: url('/fonts/americantypewriter.ttf');
+}
+@font-face {
+    font-family: 'Paytone';
+    src: url('/fonts/paytone.ttf');
+}
+@font-face {
+    font-family: 'FreedomChanges';
+    src: url('/fonts/freedomchanges.ttf');
+}
+@font-face {
+    font-family: 'firstwave';
+    src: url('/fonts/firstwave.otf');
+}
+@font-face {
+    font-family: 'theshire';
+    src: url('/fonts/theshire.ttf');
+}
+@font-face {
+    font-family: 'aresmodernos';
+    src: url('/fonts/aresmodernos.ttf');
+}
+@font-face {
+    font-family: 'MexicanWedding';
+    src: url('/fonts/MexicanWedding.ttf');
+}
+@font-face {
+    font-family: 'Celtic';
+    src: url('/fonts/Celtic.ttf');
+}
+@font-face {
+    font-family: 'reverie';
+    src: url('/fonts/REVERIE.otf');
+}
