@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benzaiten - Underground Japanese Music</title>
+    <link rel="stylesheet" href="/styles/style_home.css">
+</head>
+
+<!--HAM MENU-->
+<header>
+    <div class="off-screen-menu">
+        <ul class="menu-list"> 
+            <li><a href="home.html" data-i18n="nav_home"></a></li>
+            <li><a href="welcome.html" data-i18n="nav_about"></a></li>
+            <li><a href="https://www.instagram.com/benzaitenmusicblog/" data-i18n="nav_contact"></a></li>
+        </ul>
+    </div>
+    
+    <nav>
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<!--BAND ARTICLE SPACE-->
+<body>
+    <img src="/images/benzaiten top.jpg" alt="header-image">
+    <div class="headerContainer">
+        <h1>BENZAITEN</h1>
+    </div>
+    <div class="subheaderContainer">
+    <h2>reviewing underground Japanese bands</h2>
+    </div>
+
+    <div class="BDBContainer">
+        <a href="BDB.html" class="BDBText">Thee BlackDoor Blues</a>
+    </div>
+
+    <div class="MODERNOLDContainer">
+        <a href="modernold.html" class="MODERNOLDText">Modern Old</a>
+    </div>
+
+    <div class="NORTHERNPELEContainer">
+        <a href="northernpele.html" class="NORTHERNPELEText">Northern Pele</a>
+    </div>
+
+    <div class="KONNICHIWATYPHOONContainer">
+        <a href="konnichiwatyphoon.html" class="KONNICHIWATYPHOONText">Konnichiwa Typhoon</a>
+    </div>
+
+    <div class="THEPORTALContainer">
+        <a href="theportal.html" class="THEPORTALText">THE PORTAL</a>
+    </div>
+    
+    <div class="VAIWATTContainer">
+        <a href="vaiwatt.html" class="VAIWATTText">VAIWATT</a>
+    </div>
+
+    <div class="FUQAContainer">
+        <a href="fuqa.html" class="FUQAText">FUQA</a>
+    </div>
+
+    <div class="welcomeToBenzaitenContainer">
+        <a href="welcome.html" class="welcomeToBenzaitenText">—-Welcome to Benzaiten—-<br>弁財天</a>
+    </div>
+
+    <!--POP-UP-->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="close">&times;</span>
+            <h2>Subscribe to Benzaiten</h2>
+            <form id="subscriptionForm">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button id="subscribeSubmit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <!--SCRIPT-->
+
+<script src="/script.js"></script>
+<script>
+        const translations = {
+  en: {
+    nav_home: "Home",
+    nav_about: "About",
+    nav_contact: "Contact",
+  },
+
+  jp: {
+    nav_home: "ホーム",
+    nav_about: "当サイト",
+    nav_contact: "お問い合わせ",
+  },
+};
+
+const lang = localStorage.getItem("lang") || "en";
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  el.textContent = translations[lang][el.dataset.i18n];
+});
+</script>
+
+<script>
+$ (document).ready(function() {   
+      if ($ .cookie("popup_1_2") == null) {
+           $('#modalUser').modal('show');
+      $ .cookie("popup_1_2", "2");
+   }
+ });
+</script>
+
+
+</body>
+</html>
+

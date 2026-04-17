@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beto De Armas - About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=League+Spartan:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/about.css">
+</head>
+<body class="bg-black text-white font-sans">
+
+    <!-- Hamburger -->
+  <div id="hamburger" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+    <!-- Overlay Menu -->
+  <div id="overlay" class="overlay">
+    <div class="menu-content">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="/benzaiten/benzaiten.html">Blog</a>
+      <a href="goldencougarmusic.html">Golden Cougar Music</a>
+      <a href="mailto:humberto.dearmas@gmail.com">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+<section class="hero-section">
+  <div id="about-title-box">
+    <h1 class="text-6xl" style="font-family: 'reverie'">Beto De Armas</h1>
+  </div>
+  <div id="about-section-box">
+    <img id="beto-bw-about" src="/images/beto_bw.jpg">
+    <div id="about-text">
+      <p3>
+        <br>
+        <i>Here's the story...</i>
+        <br><br><br>
+        Beto De Armas is a Tokyo‑based musician and creative spirit with roots in Venezuela - his own forsaken paradise - as well as USA and Sweden.  
+        Now residing in Tokyo's lively Setagaya Ward, he is known for blending alternative, experimental and pop music into haunting and evocative soundscapes.<br><br>
+
+        Having grown up in the valley of Caracas, political unrest and economic instability prompted him to move to his mother's hometown of Gothenburg. Later on he would graduate from Malmö 
+        University with a degree in international relations before finally relocating to Japan, where he has now lived for nearly 10 years.<br><br>
+
+        A self‑released artist, Beto has put out 3 four-track EPs - "SAYA", "Weeping Willow", and most recently "Butterfly, this too shall pass", and a number of classic rock-inspired singles
+        like "The Room" and "Destroy The World".<br><br>
+
+        In the early years Beto optimized his creative flow in Tokyo’s urban energy, painting his art with emotional honesty, which may be seen by some as mundane, but it is the mundane in which
+        our lives and habits are formed. It is an infinite collection of small moments that make up the grandeur of our own lives. Spending his 20s in Tokyo made way for a lifetime of material, which
+        is in stark contrast with his typical erratic, jolly self. As he succinctly describes himself: 
+        “Beto is a Tokyo‑based alien believer.”, a trope that would guide him to find the <a href="https://aztecbrides.com" target="blank" ID="about-paragraph-link">Aztec Brides</a> 
+        - another project that came about through destinational happenstance. As a solo artist, however, 
+        he explores creative freedoms divergent from that usual funk-based persona and dives deeper into the side of him that most never see.<br><br>
+
+        Songs like "So Easy" and "Ocean of Lies" provide a glimpse of what lies beneath, wrapped in a colorful blend of sounds that deliver a poison in sugar coated melodies. Not everything is what it seems,
+        and Beto hopes to move people with this message, encoded in his music.<br><br>
+      </p3>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+  <footer>
+    © 2025 Beto De Armas. All rights reserved.
+  </footer>
+
+
+<script>
+
+/*HAM MENU*/
+const hamburger = document.getElementById("hamburger");
+const overlay = document.getElementById("overlay");
+
+hamburger.addEventListener("click", () => {
+  overlay.classList.toggle("active");
+});
+
+const hamMenu = document.querySelector('.hamburger');
+
+const offScreenMenu = document.querySelector('.off-screen-menu');
+
+hamMenu.addEventListener('click', ()=>{
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active')
+})
+
+</script>
+
+</body>
+</html>

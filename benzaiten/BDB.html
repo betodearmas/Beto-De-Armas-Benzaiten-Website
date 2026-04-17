@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benzaiten - Thee BlackDoor Blues</title>
+  <link rel="stylesheet" href="/styles/style_general.css">
+  <link rel="stylesheet" href="/styles/style_article.css">
+
+  <style>
+  .off-screen-menu {
+      background-color: rgb(20, 20, 20);
+  }
+  .menu-list a:hover {
+      color: rgb(180, 120, 60);
+  }
+  .menu-list a {
+      color: antiquewhite;
+  }
+  .ham-menu span {
+      background-color: rgb(20, 20, 20);
+  }
+  .scrolled .ham-menu span {
+      background-color: blanchedalmond;
+  }
+  .welcometobenzaitencontainer {
+    background-image: url('/images/BDB.JPG');
+  }
+  </style>
+</head>
+
+<header>
+  <div class="off-screen-menu">
+    <ul class="menu-list">
+      <li><a href="home.html" data-i18n="nav_home"></a></li>
+      <li><a href="welcome.html" data-i18n="nav_about"></a></li>
+      <li><a href="https://www.instagram.com/benzaitenmusicblog/" data-i18n="nav_contact"></a></li>
+    </ul>
+  </div>
+
+  <div class="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<body>
+
+<div class="welcometobenzaitencontainer">
+  <h1 style="font-family: MexicanWedding;">Thee Blackdoor Blues</h1>
+</div>
+
+<h3 data-i18n="date"></h3>
+
+<div class="welcometobenzaitentextcontainer">
+  <p data-i18n="p1"></p>
+  <div class="sampleclip"><iframe width="300" height="234.15" src="https://www.youtube.com/embed/oviU2Ns9KLk?si=FTI4kqg6gEVHeL4V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <p data-i18n="p2"></p>
+</div>
+
+<div class="button-container">
+  <button id="nextbutton" onclick="location.href='home.html'" data-i18n="next"></button>
+  <button id="previousbutton" onclick="location.href='modernold.html'" data-i18n="prev"></button>
+</div>
+
+<section class="comments-section">
+  <h2 data-i18n="comments_title"></h2>
+
+  <form class="comments-form">
+    <div class="form-group">
+      <label for="name" data-i18n="label_name"></label>
+      <input type="text" id="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="comment" data-i18n="label_comment"></label>
+      <textarea id="comment" rows="5" required></textarea>
+    </div>
+
+    <button id="submitbutton" data-i18n="submit"></button>
+  </form>
+</section>
+
+<script>
+const translations = {
+  en: {
+    nav_home: "Home",
+    nav_about: "About",
+    nav_contact: "Contact",
+
+    title: "Thee BlackDoor Blues",
+    date: "Posted on May 22, 2025",
+
+    p1: "Thee BlackDoor Blues: Tokyo's Dynamic Blues Duo. Self-described as a 'garage noise' band, Thee BlackDoor Blues are comprised of rocking newlyweds Jocelyn and Naoto. I won't dare to presume anything about their 'alone time', but if the raw, soulful blend of blues, rock, and garage influences that brings these two to life is any indication, I'm sure Jocelyn is a very happy woman. Or should I say, Naoto a very happy man? Jocelyn's vocal style is one of the defining elements of Thee BlackDoor Blues. With a voice that blends the raw emotionality of blues with the intensity of rock, she takes you through a range of emotions. Her guitar playing is similarly powerful, bringing a raw energy to each riff and chord. Whether she's singing sultry ballads or belting out high-octane rock anthems, Jocelyn's presence is undeniable. She really gives 100% every time. What's more, she will occasionally break out the harmonica and start wailing. What more can you ask for? Behind the drum kit, Naoto provides the pulse that drives Thee BlackDoor Blues' sound. His drumming is often simple yet incredibly effective, creating a foundation for Jocelyn's vocals and guitar to shine. He brings a rhythmic precision and laid-back groove to the band's tracks while maintaining a sense of spontaneity in live performances. He also plays the guitar at the same time, so, really, he's a one-man rhythm section. Within that dynamic, the synergy between Jocelyn and Naoto is palpable, with each member pushing the other to the max. Here is a clip of them playing a couple of their classics:",
+    p2: "Thee BlackDoor Blues are known for their fusion of blues, rock, and garage elements. Their music carries the influence of classic blues artists while also tapping into the energy and rebellious spirit of garage rock. The songs are raw and stripped-down, often with a lo-fi production style that enhances their underground aesthetic. Jocelyn's sultry vocals and Naoto's steady, sometimes minimalist drumming create an infectious groove that feels intimate and immediate. The simplicity of their setup doesn't detract from the depth of their sound — instead, it's a testament to their ability to create something powerful with just the two of them. The bluesy guitar riffs, combined with Jocelyn's haunting voice and Naoto's steady drumming, evoke the spirit of classic blues while maintaining a contemporary, punk-rock edge. In a world of polished, formulaic music, Thee BlackDoor Blues bring something real — music that speaks to the heart, soul, and the underground spirit of rock and blues.",
+
+    next: "BACK TO HOME",
+    prev: "PREVIOUS",
+
+    comments_title: "Leave a Comment",
+    label_name: "Name:",
+    label_comment: "Comment:",
+    submit: "Submit",
+  },
+
+  jp: {
+    nav_home: "ホーム",
+    nav_about: "当サイトについて",
+    nav_contact: "お問い合わせ",
+
+    title: "Thee BlackDoor Blues",
+    date: "2025年5月22日 投稿",
+
+    p1: "ザ・ブラックドア・ブルース — 東京のブルースのダイナミックデュオ。「ガレージ・ノイズ」と自称するブラックドア・ブルースは、ロックな新婚夫婦、ジョセリンとナオトで構成されている。彼らの「二人だけの時間」についてはあえて推測はしないが、この二人がブルースとロックとガレージから受けた影響からすると、ジョセリンはとても幸せな女性なのだろう。あるいは、ナオトはとても幸せな男だと言うべきだろうか？ジョセリンのヴォーカル・スタイルは、ジー・ブラックドア・ブルースを特徴づける要素のひとつだ。ブルースの生々しい感情表現とロックの激しさを融合させた歌声で、聴く者を様々な感情に誘う。彼女のギター・プレイも同様にパワフルで、それぞれのリフとコードに生々しいエネルギーをもたらしている。スルメのようなバラードを歌っても、ハイテンションなロック・アンセムを口ずさんでも、ジョセリンの存在感は否定できない。彼女は毎回100％の力を発揮する。さらに、彼女は時折ハーモニカを取り出し、最強に吹き始める。これ以上何を望む？ドラム・キットの裏では、ナオトがThee BlackDoor Bluesのサウンドの原動力となっている。彼のドラミングはシンプルでありながら驚くほど効果的で、ジョセリンのヴォーカルとギターを輝かせる土台を作っている。彼はバンドの楽曲にリズムの正確さとゆったりとしたグルーヴをもたらすと同時に、ライブではのびのびとした感覚を保っている。彼は同時にギターも弾くので、まさにワンマン・リズム・セクションなのだ。そのダイナミックの中で、ジョセリンとナオトのシナジーは感じられ、それぞれのメンバーが相手を最大限にプッシュしている。以下はその映像である。彼らの名曲の数々を演奏している：",
+    p2: "Thee BlackDoor Bluesは、ブルース、ロック、ガレージの要素を融合させたバンドとして知られている。彼らの音楽は、古典的なブルース・アーティストの影響を受けつつ、ガレージ・ロックのエネルギーと反骨精神も取り入れている。曲は生々しく削ぎ落とされ、しばしばローファイなプロダクション・スタイルが彼らのアンダーグラウンドな美学を高めている。ジョセリンの蒸し暑いヴォーカルとナオトの安定した、時にはミニマルなドラミングが、親密で即効性のあるグルーヴを生み出している。シンプルなセットアップは、彼らのサウンドの深みを損なわない。それは、2人だけでパワフルなものを作り上げる彼らの能力の証なのだ。ブルージーなギター・リフとジョセリンの心に響く歌声、そしてナオトの安定したドラミング、現代的なパンク・ロックのエッジを保ちながら、古典的なブルースの精神を呼び起こす。洗練され、定型化された音楽の世界で、ジー・ブラックドア・ブルースは、ロックとブルースの心、魂、アンダーグラウンド・スピリットに語りかける本物を届けてくれる。",
+
+    next: "ホームへ戻る",
+    prev: "前へ",
+
+    comments_title: "コメントをする",
+    label_name: "名前：",
+    label_comment: "コメント：",
+    submit: "送信"
+  }
+};
+
+const lang = localStorage.getItem("lang") || "en";
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  el.textContent = translations[lang][el.dataset.i18n];
+});
+
+</script>
+<script src="/script.js"></script>
+
+</body>
+</html>
