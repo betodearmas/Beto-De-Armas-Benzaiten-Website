@@ -247,18 +247,18 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: -80px;
-      bottom: -80px;
+      top: -180px;
+      bottom: -180px;
       background-size: cover;
       background-position: center top;
       z-index: 0;
       will-change: transform;
     }
 
-    .card-aztec .card-parallax-bg { background-image: url('https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.aztecbrides.com?w=1280&h=900'); }
-    .card-rufus .card-parallax-bg { background-image: url('https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.rufus-design.com?w=1280&h=900'); }
-    .card-beto  .card-parallax-bg { background-image: url('https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.betodearmas.com?w=1280&h=900'); }
-    .card-sonic .card-parallax-bg { background-image: url('https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.sonicassembly.se?w=1280&h=900'); }
+    .card-aztec .card-parallax-bg { background-image: url('images/preview-aztec.png'); }
+    .card-rufus .card-parallax-bg { background-image: url('images/preview-rufus.png'); }
+    .card-beto  .card-parallax-bg { background-image: url('images/preview-beto.png'); }
+    .card-sonic .card-parallax-bg { background-image: url('images/preview-sonic.png'); }
 
     /* ── BRAND TINT LAYER (semi-transparent, sits above screenshot) ── */
     .card-bg {
@@ -274,15 +274,11 @@
       transform: scale(1.06);
     }
 
-    .card-aztec .card-bg { background: linear-gradient(135deg, rgba(26,0,0,0.72) 0%, rgba(61,0,20,0.6) 40%, rgba(0,0,0,0.45) 100%); }
-    .card-rufus .card-bg { background: linear-gradient(135deg, rgba(0,26,10,0.72) 0%, rgba(0,43,26,0.6) 50%, rgba(0,0,0,0.45) 100%); }
-    .card-beto  .card-bg { background: linear-gradient(135deg, rgba(10,0,26,0.72) 0%, rgba(26,0,51,0.6) 50%, rgba(0,0,0,0.45) 100%); }
-    .card-sonic .card-bg { background: linear-gradient(135deg, rgba(0,18,32,0.72) 0%, rgba(0,32,64,0.6) 50%, rgba(0,0,0,0.45) 100%); }
+    .card-aztec .card-bg,
+    .card-rufus .card-bg,
+    .card-beto  .card-bg,
+    .card-sonic .card-bg { background: linear-gradient(135deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.05) 100%); }
 
-    .card-aztec .card-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,0,79,0.25) 0%, transparent 60%); }
-    .card-rufus .card-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 70%, rgba(0,255,120,0.2) 0%, transparent 60%); }
-    .card-beto  .card-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(180,0,255,0.3) 0%, transparent 60%); }
-    .card-sonic .card-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(0,150,255,0.3) 0%, transparent 60%); }
 
     .card-overlay {
       position: absolute;
@@ -401,7 +397,7 @@
     /* Sonic Assembly — black and white (pure white + white stripe) */
     .card-sonic .card-stripe               { background: #ffffff; }
     .card-sonic .card-tag                  { color: #ffffff; border-color: rgba(255,255,255,0.35); }
-    .card-sonic:hover .card-title          { color: #ffffff; }
+    .card-sonic:hover .card-title          { color: #000000; }
     .card-sonic:hover .card-link           { color: rgba(255,255,255,0.75); }
 
     .shape { position: absolute; pointer-events: none; }
@@ -658,7 +654,7 @@
 
   <footer>
     <div class="footer-logo">BDA</div>
-    <p class="footer-copy">© 2024 Beto de Armas — All rights reserved</p>
+    <p class="footer-copy">© 2026 Beto de Armas — All rights reserved</p>
   </footer>
 
   <script>
@@ -718,7 +714,7 @@
         // 0 = card just entered viewport from bottom, 1 = fully exited from top
         const progress = (vh - rect.top) / (vh + rect.height);
         const clamped  = Math.max(0, Math.min(1, progress));
-        const offset   = (clamped - 0.5) * 120; // ±60px
+        const offset   = (clamped - 0.5) * 320; // ±160px
         bg.style.transform = `translateY(${offset}px)`;
       });
     }
