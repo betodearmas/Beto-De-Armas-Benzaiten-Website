@@ -159,7 +159,6 @@ input[type="email"] {
     background-color: goldenrod;
 }
 
-
 /*=====================*/
 /*BAND ARTICLE SECTIONS*/
 /*=====================*/
@@ -167,14 +166,14 @@ input[type="email"] {
 .BDBContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/BDB.JPG');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -203,14 +202,14 @@ input[type="email"] {
 .MODERNOLDContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/modernold.png');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -239,14 +238,14 @@ input[type="email"] {
 .NORTHERNPELEContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/NorthernPele.jpeg');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -275,14 +274,14 @@ input[type="email"] {
 .KONNICHIWATYPHOONContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/KT.webp');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -311,14 +310,14 @@ input[type="email"] {
 .THEPORTALContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/THEPORTAL.jpg');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -347,14 +346,14 @@ input[type="email"] {
 .VAIWATTContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/Vaiwatt-2021-photo-by-Anna-Shivarnova.webp');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -382,14 +381,14 @@ input[type="email"] {
 .FUQAContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/FUQA.jpg');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 }
@@ -416,14 +415,14 @@ input[type="email"] {
 .welcomeToBenzaitenContainer {
     width: 100%;
     display: flex;
-    height: auto; /* Adjust this height as needed */
+    height: auto;
     padding-top: 50vh;
-    position: relative; /* Set the container to relative position */
+    position: relative;
     background-image: url('/images/welcometobenzaiten.jpg');
-    background-size: cover; /* Ensure the image covers the container */
-    background-position: center center; /* Center the image */
-    overflow: hidden;
-    text-align: center; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
     justify-content: center;
     align-items: center;
 } 
@@ -482,7 +481,19 @@ input[type="email"] {
 /*=====================*/
 /*======= MOBILE ======*/
 /*=====================*/
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
+
+.BDBContainer,
+.MODERNOLDContainer,
+.NORTHERNPELEContainer,
+.KONNICHIWATYPHOONContainer,
+.THEPORTALContainer,
+.VAIWATTContainer,
+.FUQAContainer,
+.welcomeToBenzaitenContainer {
+    background-attachment: scroll;
+}
+
 
 .off-screen-menu {
     background-color: rgb(176, 57, 79);
