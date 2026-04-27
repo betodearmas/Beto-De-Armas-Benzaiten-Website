@@ -563,7 +563,9 @@
       });
     },{threshold:0.12});
     reveals.forEach(function(el){observer.observe(el);});
-    function updateParallax() {
+    // rAF loop — reads BoundingClientRect every frame so mobile momentum
+    // scroll stays smooth regardless of when scroll events fire
+    function parallaxLoop() {
       var vh=window.innerHeight;
       document.querySelectorAll('.project-card').forEach(function(card) {
         var bg=card.querySelector('.card-parallax-bg');
@@ -572,12 +574,11 @@
         var progress=(vh-rect.top)/(vh+rect.height);
         var clamped=Math.max(0,Math.min(1,progress));
         var offset=(clamped-0.5)*320;
-        bg.style.transform='translateY('+offset+'px)';
+        bg.style.transform='translate3d(0,'+offset+'px,0)';
       });
+      requestAnimationFrame(parallaxLoop);
     }
-    window.addEventListener('scroll',updateParallax,{passive:true});
-    window.addEventListener('resize',updateParallax,{passive:true});
-    updateParallax();
+    parallaxLoop();
   </script>
 
   <!-- 3D head: fully self-contained, no CDN, works on file:// -->
