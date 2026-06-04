@@ -354,33 +354,45 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   .disc-inner {
-    gap: 3vw;
-    padding: 3vh 4vw 1vh;
-    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    padding: 3vh 5vw 1vh;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+  .disc-cover-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
   }
   .disc-cover-wrap img {
-    height: min(calc(100dvh - 180px), 280px);
+    height: auto;
+    width: min(70vw, 260px);
   }
-  .disc-info { max-width: none; }
+  .disc-info {
+    max-width: none;
+    width: 100%;
+  }
   .disc-label { font-size: 0.6rem; }
-  .disc-title { font-size: clamp(0.95rem, 3.8vw, 1.5rem); }
-  .disc-artist { font-size: 0.7rem; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+  .disc-title { font-size: clamp(1.1rem, 5vw, 1.6rem); margin-bottom: 0.3rem; }
+  .disc-artist { font-size: 0.7rem; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
   .disc-links { column-gap: 1rem; }
   .disc-link-row { padding: 5px 0; }
   .disc-link-row a { font-size: 0.72rem; }
   .disc-link-row .link-icon { width: 13px; height: 13px; }
 
-  /* looping thumbnail marquee */
+  /* static thumbnail strip — no auto-scroll */
   .disc-thumbs-track {
+    animation: none;
     overflow: visible;
     width: max-content;
-    padding: 0 0 0 12px;
-    animation: disc-loop 22s linear infinite;
+    padding: 0 5vw;
     flex-shrink: 0;
   }
-  .disc-thumbs-track:hover { animation-play-state: paused; }
   .disc-thumb { width: 60px; height: 60px; }
-  .disc-thumb-clone { display: block; }
+  .disc-thumb-clone { display: none; }
 }
 
 
