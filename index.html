@@ -38,10 +38,10 @@
   </div>
   <img id="butterfly" src="/images/butterfly.png">
   <div id="hero-section-songs">
-    <p>new album ・ out now</p>
+    <p>latest releases</p>
+    <a href="#discography" id="hero-new-release">► Every Good and Perfect Gift</a>
     <a href="https://share.amuse.io/album/beto-de-armas-butterfly-this-too-shall-pass" target="blank">► Butterfly, this too shall pass</a>
     <a href="https://share.amuse.io/AKemEXW2ttco" target="blank">► SAYA EP</a>
-    <a href="https://open.spotify.com/album/0WhikG1oEDHB51KKjjr1i5?si=h841y_XLQkGsWHtKe0AGOA" target="blank">► Weeping Willow EP</a>
   </div>
 </section>
 
@@ -63,21 +63,21 @@
   </div>
 </div>
 
-  <!-- Butterfly, this too shall pass -->
-<section class="BTTSP-section">
-  <div id="BTTSP-cover">
-    <img src="/images/BTTSP.png">
+  <!-- DISCOGRAPHY -->
+<section class="disc-section" id="discography">
+  <div class="disc-glow" id="disc-glow"></div>
+  <div class="disc-inner" id="disc-inner">
+    <div class="disc-cover-wrap">
+      <img id="disc-cover-img" src="" alt="">
+    </div>
+    <div class="disc-info">
+      <p class="disc-label" id="disc-type"></p>
+      <h2 class="disc-title" id="disc-title"></h2>
+      <p class="disc-artist" id="disc-year"></p>
+      <div class="disc-links" id="disc-links"></div>
+    </div>
   </div>
-  <div id="BTTSP-link-list">
-    <div class="BTTSP-link-box"><img class="link-icon" id="purchase-icon" src="/images/purchase-icon.png"><a href="https://betodearmas.bandcamp.com/"><i>purchase</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="save-icon" src="/images/save-icon.png"><a href=""><i>save</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="spotify-icon" src="/images/spotify-icon.png"><a href="https://open.spotify.com/artist/5XqxDaOPORoQniCFedvVrD?si=zkjuyaUlTDOkoCki_rqbaQ"><i>spotify</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="applemusic-icon" src="/images/applemusic-icon.png"><a href="https://music.apple.com/us/artist/beto-de-armas/1559752995"><i>apple music</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="amazon-icon" src="/images/amazon-icon.png"><a href="https://amazon.com/music/player/artists/B08Z4GMDX7/beto-de-armas?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_hJgrLZbq6sBOPsugQQHKVfD79"><i>amazon</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="youtubemusic-icon" src="/images/youtubemusic-icon.png"><a href="https://music.youtube.com/channel/UCJW4z6TWyhO6SjK-XXCse6g?si=_vo7dfsujEEk-klW"><i>youtube music</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="deezer-icon" src="/images/deezer-icon.png"><a href="https://www.deezer.com/ja/artist/126758842?autoplay=true"><i>deezer</i></a></div>
-    <div class="BTTSP-link-box"><img class="link-icon" id="tidal-icon" src="/images/tidal-icon.png"><a href="https://tidal.com/browse/artist/23983087"><i>tidal</i></a></div>
-  </div>
+  <div class="disc-thumbnails" id="disc-thumbnails"></div>
 </section>
 
 
@@ -108,6 +108,220 @@
 
 
 <script>
+
+  /*DISCOGRAPHY*/
+  const albums = [
+    {
+      title: 'Every Good<br>and Perfect Gift',
+      cover: '/images/EGAPG.png',
+      year: '2026', type: 'Latest Release',
+      glow: ['rgba(180,50,30,0.22)','rgba(140,40,80,0.18)','rgba(40,110,70,0.13)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/save-icon.png', label: 'pre-save', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+    {
+      title: 'Butterfly,<br>This Too Shall Pass',
+      cover: '/images/BTTSP.png',
+      year: '2024', type: 'EP',
+      glow: ['rgba(50,90,160,0.22)','rgba(80,60,140,0.15)','rgba(20,80,120,0.12)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: 'https://betodearmas.bandcamp.com/' },
+        { icon: '/images/save-icon.png', label: 'save', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: 'https://open.spotify.com/artist/5XqxDaOPORoQniCFedvVrD?si=zkjuyaUlTDOkoCki_rqbaQ' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: 'https://music.apple.com/us/artist/beto-de-armas/1559752995' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: 'https://amazon.com/music/player/artists/B08Z4GMDX7/beto-de-armas?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_hJgrLZbq6sBOPsugQQHKVfD79' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: 'https://music.youtube.com/channel/UCJW4z6TWyhO6SjK-XXCse6g?si=_vo7dfsujEEk-klW' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: 'https://www.deezer.com/ja/artist/126758842?autoplay=true' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: 'https://tidal.com/browse/artist/23983087' },
+      ]
+    },
+       {
+      title: 'SAYA EP',
+      cover: '/images/albumcovers/saya.jpg',
+      year: '2021', type: 'EP',
+      glow: ['rgba(20,100,80,0.22)','rgba(40,130,60,0.15)','rgba(60,90,160,0.10)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'stream', href: 'https://share.amuse.io/AKemEXW2ttco' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+      {
+      title: "Alive (Like It's the<br>End of the World)",
+      cover: '/images/albumcovers/alive.jpg',
+      year: '2021', type: 'Single',
+      glow: ['rgba(160,40,30,0.25)','rgba(40,80,160,0.20)','rgba(100,30,20,0.12)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+    {
+      title: "To All The People I've Hurt", // TODO: update with full title
+      cover: '/images/albumcovers/tatpih.jpg',
+      year: '2021', type: 'Single',
+      glow: ['rgba(160,50,20,0.22)','rgba(30,80,90,0.18)','rgba(180,90,40,0.12)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+    {
+      title: 'Weeping Willow EP',
+      cover: '/images/albumcovers/ww.jpg',
+      year: '2020', type: 'EP',
+      glow: ['rgba(50,90,30,0.22)','rgba(80,110,40,0.15)','rgba(100,130,60,0.10)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: 'https://open.spotify.com/album/0WhikG1oEDHB51KKjjr1i5?si=h841y_XLQkGsWHtKe0AGOA' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+    {
+      title: 'The Room',
+      cover: '/images/albumcovers/theroom.jpg',
+      year: '2020', type: 'Single',
+      glow: ['rgba(180,30,20,0.25)','rgba(140,20,10,0.18)','rgba(60,30,20,0.12)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+    {
+      title: 'Summer Love Song', // TODO: update with full title
+      cover: '/images/albumcovers/SLS.jpg',
+      year: '2020', type: 'Single',
+      glow: ['rgba(80,80,80,0.22)','rgba(60,60,60,0.15)','rgba(100,90,80,0.10)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+    {
+      title: 'Destroy the World', // TODO: update with full title
+      cover: '/images/albumcovers/DtW.png',
+      year: '2020', type: 'Album',
+      glow: ['rgba(20,60,140,0.22)','rgba(30,100,120,0.18)','rgba(40,80,160,0.12)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+      {
+      title: 'Korea Girl',
+      cover: '/images/albumcovers/koreagirl.jpg',
+      year: '2020', type: 'Single',
+      glow: ['rgba(160,130,20,0.20)','rgba(40,100,120,0.18)','rgba(180,60,40,0.10)'],
+      links: [
+        { icon: '/images/purchase-icon.png', label: 'purchase', href: '' },
+        { icon: '/images/spotify-icon.png', label: 'spotify', href: '' },
+        { icon: '/images/applemusic-icon.png', label: 'apple music', href: '' },
+        { icon: '/images/amazon-icon.png', label: 'amazon', href: '' },
+        { icon: '/images/youtubemusic-icon.png', label: 'youtube music', href: '' },
+        { icon: '/images/deezer-icon.png', label: 'deezer', href: '' },
+        { icon: '/images/tidal-icon.png', label: 'tidal', href: '' },
+      ]
+    },
+  ];
+
+  let discActiveIdx = 0;
+
+  function discUpdate(idx) {
+    const a = albums[idx];
+    document.getElementById('disc-glow').style.background = [
+      `radial-gradient(ellipse 60% 55% at 20% 60%, ${a.glow[0]} 0%, transparent 70%)`,
+      `radial-gradient(ellipse 40% 40% at 75% 30%, ${a.glow[1]} 0%, transparent 70%)`,
+      `radial-gradient(ellipse 30% 30% at 55% 80%, ${a.glow[2]} 0%, transparent 60%)`
+    ].join(', ');
+    document.getElementById('disc-cover-img').src = a.cover;
+    document.getElementById('disc-cover-img').alt = a.title.replace(/<br>/g, ' ');
+    document.getElementById('disc-type').textContent = a.type;
+    document.getElementById('disc-title').innerHTML = a.title;
+    document.getElementById('disc-year').textContent = a.year ? 'Beto De Armas · ' + a.year : 'Beto De Armas';
+    document.getElementById('disc-links').innerHTML = a.links.map(l =>
+      `<div class="disc-link-row"><img class="link-icon" src="${l.icon}" alt=""><a href="${l.href}"${l.href ? ' target="_blank"' : ''}><i>${l.label}</i></a></div>`
+    ).join('');
+    document.querySelectorAll('.disc-thumb').forEach((el, i) => el.classList.toggle('active', i === idx));
+  }
+
+  function discSelect(idx) {
+    if (idx === discActiveIdx) return;
+    discActiveIdx = idx;
+    const inner = document.getElementById('disc-inner');
+    inner.classList.add('fading');
+    setTimeout(() => { discUpdate(idx); inner.classList.remove('fading'); }, 220);
+  }
+
+  (function initDisc() {
+    const container = document.getElementById('disc-thumbnails');
+    const track = document.createElement('div');
+    track.className = 'disc-thumbs-track';
+
+    function makeThumb(a, i, ariaHidden) {
+      const btn = document.createElement('button');
+      btn.className = 'disc-thumb';
+      btn.dataset.idx = i;
+      if (ariaHidden) { btn.setAttribute('aria-hidden', 'true'); btn.tabIndex = -1; }
+      else btn.setAttribute('aria-label', a.title.replace(/<br>/g, ' '));
+      const img = document.createElement('img');
+      img.src = a.cover; img.alt = '';
+      btn.appendChild(img);
+      btn.addEventListener('click', () => discSelect(+btn.dataset.idx));
+      return btn;
+    }
+
+    albums.forEach((a, i) => track.appendChild(makeThumb(a, i, false)));
+    // duplicate set for infinite loop — hidden on desktop via .disc-thumb-clone
+    albums.forEach((a, i) => {
+      const clone = makeThumb(a, i, true);
+      clone.classList.add('disc-thumb-clone');
+      track.appendChild(clone);
+    });
+
+    container.appendChild(track);
+    discUpdate(0);
+  })();
 
   /*HAM MENU*/
   const hamburger = document.getElementById("hamburger");
