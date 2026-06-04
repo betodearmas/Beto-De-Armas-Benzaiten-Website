@@ -353,13 +353,19 @@ a:hover {
 #hero-new-release:hover { color: #e87050; }
 
 @media screen and (max-width: 768px) {
+  .disc-section {
+    height: auto;
+    min-height: unset;
+    overflow: hidden;
+  }
   .disc-inner {
+    flex: none;
     flex-direction: column;
     gap: 0;
-    padding: 3vh 5vw 1vh;
+    padding: 20px 20px 10px;
     align-items: stretch;
     justify-content: flex-start;
-    overflow-y: auto;
+    overflow: visible;
   }
   .disc-cover-wrap {
     width: 100%;
@@ -368,8 +374,8 @@ a:hover {
     margin-bottom: 2vh;
   }
   .disc-cover-wrap img {
+    width: 90vw;
     height: auto;
-    width: min(70vw, 260px);
   }
   .disc-info {
     max-width: none;
@@ -383,15 +389,23 @@ a:hover {
   .disc-link-row a { font-size: 0.72rem; }
   .disc-link-row .link-icon { width: 13px; height: 13px; }
 
-  /* static thumbnail strip — no auto-scroll */
+  /* single-row thumbnail strip */
+  .disc-thumbnails {
+    overflow: hidden;
+    padding: 0 5vw;
+  }
   .disc-thumbs-track {
     animation: none;
-    overflow: visible;
-    width: max-content;
-    padding: 0 5vw;
-    flex-shrink: 0;
+    width: 100%;
+    padding: 0;
+    gap: 4px;
   }
-  .disc-thumb { width: 60px; height: 60px; }
+  .disc-thumb {
+    flex: 1 1 0;
+    width: 0;
+    height: auto;
+    aspect-ratio: 1;
+  }
   .disc-thumb-clone { display: none; }
 }
 
@@ -482,6 +496,8 @@ footer{
 }
 #music-videos-section {
 height: 35vh;
+background-color: #08060a;
+margin-top: 0;
 }
 #music-videos-title-container {
   font-size: 1.5rem;
