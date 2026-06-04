@@ -383,11 +383,23 @@ a:hover {
   }
   .disc-label { font-size: 0.6rem; }
   .disc-title { font-size: clamp(1.1rem, 5vw, 1.6rem); margin-bottom: 0.3rem; }
-  .disc-artist { font-size: 0.7rem; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
-  .disc-links { column-gap: 1rem; }
-  .disc-link-row { padding: 5px 0; }
+  .disc-artist { font-size: 0.7rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .disc-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  .disc-link-row { display: none; border: none; padding: 0; }
+  .disc-link-row:has(img[src*="spotify"]),
+  .disc-link-row:has(img[src*="applemusic"]),
+  .disc-link-row:has(img[src*="youtubemusic"]) {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
   .disc-link-row a { font-size: 0.72rem; }
-  .disc-link-row .link-icon { width: 13px; height: 13px; }
+  .disc-link-row .link-icon { width: 15px; height: 15px; }
 
   /* single-row thumbnail strip */
   .disc-thumbnails {
@@ -462,7 +474,7 @@ footer{
 @media screen and (max-width: 768px) { 
 
 .hamburger {
-  top: 13px;
+  top: 15px;
   left: 8px;
 }
 #butterfly {
