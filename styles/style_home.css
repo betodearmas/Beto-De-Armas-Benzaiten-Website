@@ -1,488 +1,187 @@
-/*HOME*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+/* ===========================
+   BASE
+=========================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
-    background-color: blanchedalmond;
+    background-color: #F2EDE4;
+    scroll-behavior: smooth;
 }
+
+/* ===========================
+   MASTHEAD
+=========================== */
+.masthead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem 3rem;
+    border-bottom: 3px solid #111;
+    position: relative;
+}
+
+.masthead-top-rule {
+    width: 100%;
+    height: 8px;
+    background-color: #D62828;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+img.masthead-img {
+    width: 80px;
+    display: block;
+    margin: 0 auto 1.5rem;
+    filter: grayscale(100%) contrast(1.2);
+}
+
+/* legacy img rule (fallback for raw img tag) */
 img {
- width: 220px;
- display: block;
- margin: auto;
+    width: 80px;
+    display: block;
+    margin: 0 auto 1.5rem;
+    filter: grayscale(100%) contrast(1.2);
 }
+
 .headerContainer {
- text-align: center;
+    text-align: center;
+    line-height: 0.9;
 }
+
 h1 {
- font-family: 'Lucida Grande';
- font-style: bold;
- font-size: 10vw;
- margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 18vw, 14rem);
+    letter-spacing: 0.06em;
+    color: #111;
+    margin: 0;
+    line-height: 0.88;
 }
+
 .subheaderContainer {
- text-align: center;
- font-size: 2.5vw;;
+    text-align: center;
+    margin-top: 1rem;
 }
+
 h2 {
- font-family: AmericanTypewriter;
- font-weight: lighter;
- color: rgb(170, 170, 170);
- margin-top: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #888;
+    margin: 0;
 }
 
+/* ===========================
+   HAMBURGER MENU
+=========================== */
+nav {
+    padding: 0;
+    display: flex;
+}
 
-/*OFF-SCREEN MENU*/
+.ham-menu {
+    height: 40px;
+    width: 40px;
+    top: 16px;
+    right: 20px;
+    position: fixed;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.ham-menu span {
+    height: 3px;
+    width: 100%;
+    background-color: #111;
+    display: block;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    border-radius: 0;
+}
+
+.scrolled .ham-menu span {
+    background-color: #F2EDE4;
+}
+
+.ham-menu.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ===========================
+   OFF-SCREEN MENU
+=========================== */
 .off-screen-menu {
-    background-color: rgb(176, 57, 79);
+    background-color: #111;
     height: 100vh;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     position: fixed;
     top: 0;
-    right: -450px;
+    right: -400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 3rem;
-    transition: 0.4s ease;
+    align-items: flex-start;
+    padding: 0 3rem;
+    font-size: 2.5rem;
+    transition: right 0.4s cubic-bezier(0.77,0,0.18,1);
     z-index: 999;
+    border-left: 4px solid #D62828;
 }
+
 .off-screen-menu ul.menu-list {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
-.menu-list a:hover {
-    color: black;
+
+.off-screen-menu ul.menu-list li {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
 }
+
+.off-screen-menu ul.menu-list li:last-child {
+    border-bottom: none;
+}
+
 .menu-list a {
-    color: antiquewhite;
-    font-family: AmericanTypewriter;
+    color: #F2EDE4;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: 0.08em;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
+
+.menu-list a:hover {
+    color: #D62828;
+}
+
 .off-screen-menu.active {
     right: 0;
 }
-nav {
-    padding: 1rem; 
-    display: flex;
-}
 
-
-/*HAM MENU*/
-.ham-menu {
-    height: 50px;
-    width: 50px;
-    top: 10px;
-    right: 20px;
-    position: fixed;
-    z-index: 999;
-    cursor: pointer;
-}
-.ham-menu span {
-    height: 5px; 
-    width: 100%;
-    background-color: black;
-    border-radius: 25px; 
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .2s ease;
-}
-.scrolled .ham-menu span {
-    background-color:blanchedalmond; /* Color when scrolled */
-}
-.ham-menu span:nth-child(1){
-    top: 25%;
-}
-.ham-menu span:nth-child(3){
-    top: 75%;
-}
-.ham-menu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    transition: .2s ease;
-}
-.ham-menu.active span:nth-child(2) {
-   opacity: 0%;
-}
-.ham-menu.active span:nth-child(3) {
-    top: 50%;
-    transform: translate(-50%, 50%) rotate(-90deg);
-    transition: .2s ease;
-}
-
-
-/*POP-UP*/
-.popup {
-    display: none; 
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-.popup-content {
-    position: relative;
-    background-color: rgb(176, 57, 79); 
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
-.close {
-    position:absolute;
-    top: 0px;
-    right: 6px;
-    font-size: 20px;
-    cursor: pointer;
-    color: antiquewhite;
-}
-input[type="email"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-}
-#subscribeSubmit {
-    padding: 10px 20px;
-    background-color: rgb(176, 57, 79); 
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    font-family: AmericanTypewriter;
-}
-#subscribeSubmit:hover {
-    background-color: goldenrod;
-}
-
-/*=====================*/
-/*BAND ARTICLE SECTIONS*/
-/*=====================*/
-/*BLACK DOOR BLUES*/
-.BDBContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/BDB.JPG');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.BDBText {
-    position: absolute;
-    top: 30%; 
-    left: 15%;
-    color: white; 
-    font-size: 12vw; 
-    font-family: MexicanWedding;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-    text-decoration: none;
-}
-.BDBText:hover {
-    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
-    color: rgb(118, 0, 21); /* Change text color on hover */
-    text-shadow: 5px 5px 5px rgb(0, 0, 0);
-}
-
-/*MODERN OLD*/
-.MODERNOLDContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/modernold.png');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.MODERNOLDText {
-    position: absolute;
-    top: 30%; 
-    left: 15%;
-    color: white; 
-    font-size: 12vw; 
-    font-family: aresmodernos;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-    text-decoration: none;
-}
-.MODERNOLDText:hover {
-    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
-    color: rgb(176, 34, 61); /* Change text color on hover */
-    text-shadow: 5px 5px 5px rgba(62, 129,176);
-}
-
-/*NORTHERN PELE*/
-.NORTHERNPELEContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/NorthernPele.jpeg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.NORTHERNPELEText {
-    position: absolute;
-    top: 30%; 
-    left: 15%;
-    color: white; 
-    font-size: 6vw; 
-    font-family: theshire;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-    text-decoration: none;
-}
-.NORTHERNPELEText:hover {
-    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
-    color: rgb(0, 171, 214); /* Change text color on hover */
-    text-shadow: 5px 5px 5px rgb(255, 255, 255);
-}
-
-/*KONNICHIWA TYPHOON*/
-.KONNICHIWATYPHOONContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/KT.webp');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.KONNICHIWATYPHOONText {
-    position: absolute;
-    top: 30%; 
-    left: 30%;
-    color: white; 
-    font-size: 8vw; 
-    font-family: firstwave;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-    text-decoration: none;
-}
-.KONNICHIWATYPHOONText:hover {
-    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
-    color: rgb(255, 230, 0); /* Change text color on hover */
-    text-shadow: 5px 5px 5px rgb(255, 145, 0)
-}
-
-/*THE PORTAL*/
-.THEPORTALContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/THEPORTAL.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.THEPORTALText {
-    position: absolute;
-    top: 35%; 
-    left: 32%;
-    color: white; 
-    font-size: 5vw; 
-    font-family: FreedomChanges;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-    text-decoration: none;
-}
-.THEPORTALText:hover {
-    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
-    color: rgb(63, 41, 25); /* Change text color on hover */
-    text-shadow: 5px 5px 5px rgb(26, 112, 36)
-}
-
-/*VAIWATT*/
-.VAIWATTContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/Vaiwatt-2021-photo-by-Anna-Shivarnova.webp');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.VAIWATTText {
-    position: absolute;
-    top: 40%; 
-    left: 55%;
-    color: white; 
-    font-size: 7vw; 
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 5px;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-}
-.VAIWATTText:hover {
-    transform: translate(10px, 10px); /* Move the text 10px to the right and 10px down */
-    color: rgb(255, 153, 241); /* Change text color on hover */
-    text-shadow: 5px 5px 5px rgb(2, 0, 71)
-}
-
-/*FUQA*/
-.FUQAContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/FUQA.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.FUQAText {
-    position: absolute;
-    top: 25%; 
-    left: 25%;
-    color: white; 
-    font-size: 7vw; 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 600;
-    text-align: center; 
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
-}
-.FUQAText:hover {
-    transform: translate(10px, 10px); 
-    color: rgb(255, 0, 0);
-    text-shadow: 5px 5px 5px rgb(4, 0, 134)
-}
-
-/*WELCOME TO BENZAITEN*/
-.welcomeToBenzaitenContainer {
-    width: 100%;
-    display: flex;
-    height: auto;
-    padding-top: 50vh;
-    position: relative;
-    background-image: url('/images/welcometobenzaiten.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-} 
-.welcomeToBenzaitenText {
-    position: absolute;
-    top: 26%;
-    left: 15%;
-    color: white; 
-    font-size: clamp(5vw,5vw,7vw);
-    font-family: AmericanTypewriter;
-    font-weight: 600;
-    text-align: center center;
-    justify-content: center center;
-    align-items: center center;
-    transition: transform 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-}
-.welcomeToBenzaitenText:hover {
-    transform: scale(1.1); 
-}
-
-
-/*===========*/
-/*ADDED FONTS*/
-/*===========*/
-@font-face {
-    font-family: 'AmericanTypewriter';
-    src: url(/fonts/americantypewriter.ttf);
-}
-@font-face {
-    font-family: 'Paytone';
-    src: url(/fonts/paytone.ttf);
-}
-@font-face {
-    font-family: 'FreedomChanges';
-    src: url(/fonts/freedomchanges.ttf);
-}
-@font-face {
-    font-family: 'firstwave';
-    src: url(/fonts/firstwave.otf);
-}
-@font-face {
-    font-family: 'theshire';
-    src: url(/fonts/theshire.ttf);
-}
-@font-face {
-    font-family: 'aresmodernos';
-    src: url(/fonts/aresmodernos.ttf);
-}
-@font-face {
-    font-family: 'MexicanWedding';
-    src: url(/fonts/MexicanWedding.ttf);
-}
-
-
-/*=====================*/
-/*======= MOBILE ======*/
-/*=====================*/
-@media screen and (max-width: 1024px) {
-
+/* ===========================
+   PARALLAX BAND SECTIONS
+=========================== */
 .BDBContainer,
 .MODERNOLDContainer,
 .NORTHERNPELEContainer,
@@ -491,76 +190,241 @@ input[type="email"] {
 .VAIWATTContainer,
 .FUQAContainer,
 .welcomeToBenzaitenContainer {
-    background-attachment: scroll;
-}
-
-
-.off-screen-menu {
-    background-color: rgb(176, 57, 79);
-    height: 100vh;
     width: 100%;
-    max-width: 350px;
-    position: fixed;
-    top: 0;
-    right: -350px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 3rem;
-    transition: 0.4s ease;
-    z-index: 999;
+    height: auto;
+    padding-top: 50vh;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
-.off-screen-menu.active {
-    right: 0;
-}
-.ham-menu {
-    height: 25px;
-    width: 25px;
-    top: 10px;
-    right: 20px;
-    position: fixed;
-    z-index: 999;
-    cursor: pointer;
-}
-.ham-menu span {
-    height: 3px; 
+
+.BDBContainer           { background-image: url('/images/BDB.JPG'); }
+.MODERNOLDContainer     { background-image: url('/images/modernold.png'); }
+.NORTHERNPELEContainer  { background-image: url('/images/NorthernPele.jpeg'); }
+.KONNICHIWATYPHOONContainer { background-image: url('/images/KT.webp'); }
+.THEPORTALContainer     { background-image: url('/images/THEPORTAL.jpg'); }
+.VAIWATTContainer       { background-image: url('/images/Vaiwatt-2021-photo-by-Anna-Shivarnova.webp'); }
+.FUQAContainer          { background-image: url('/images/FUQA.jpg'); }
+.welcomeToBenzaitenContainer { background-image: url('/images/welcometobenzaiten.webp'); }
+
+/* dark gradient on bottom of each section */
+.BDBContainer::after,
+.MODERNOLDContainer::after,
+.NORTHERNPELEContainer::after,
+.KONNICHIWATYPHOONContainer::after,
+.THEPORTALContainer::after,
+.VAIWATTContainer::after,
+.FUQAContainer::after,
+.welcomeToBenzaitenContainer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    background-color: black;
-    border-radius: 25px; 
-    position: absolute; 
-    top: 50%; 
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* ===========================
+   BAND NAME LABELS
+=========================== */
+.BDBText,
+.MODERNOLDText,
+.NORTHERNPELEText,
+.KONNICHIWATYPHOONText,
+.THEPORTALText,
+.VAIWATTText,
+.FUQAText,
+.welcomeToBenzaitenText {
+    position: absolute;
+    bottom: 2rem;
+    left: 2.5rem;
+    color: #F2EDE4;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 9vw, 8rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.25s ease;
+    z-index: 2;
+    text-shadow: none;
+}
+
+.BDBText::after,
+.MODERNOLDText::after,
+.NORTHERNPELEText::after,
+.KONNICHIWATYPHOONText::after,
+.THEPORTALText::after,
+.VAIWATTText::after,
+.FUQAText::after,
+.welcomeToBenzaitenText::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 0;
+    background-color: #D62828;
+    transition: width 0.3s ease;
+    margin-top: 0.25rem;
+}
+
+.BDBText:hover,
+.MODERNOLDText:hover,
+.NORTHERNPELEText:hover,
+.KONNICHIWATYPHOONText:hover,
+.THEPORTALText:hover,
+.VAIWATTText:hover,
+.FUQAText:hover,
+.welcomeToBenzaitenText:hover {
+    color: #ffffff;
+    transform: translateY(-4px);
+}
+
+.BDBText:hover::after,
+.MODERNOLDText:hover::after,
+.NORTHERNPELEText:hover::after,
+.KONNICHIWATYPHOONText:hover::after,
+.THEPORTALText:hover::after,
+.VAIWATTText:hover::after,
+.FUQAText:hover::after,
+.welcomeToBenzaitenText:hover::after {
+    width: 100%;
+}
+
+/* ===========================
+   SUBSCRIBE POP-UP
+=========================== */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: .2s ease;
+    z-index: 1100;
 }
-.FUQAText {
-    color: rgb(255, 0, 0);
-    text-shadow: 5px 5px 5px rgb(4, 0, 134)
+
+.popup-content {
+    position: relative;
+    background-color: #111;
+    padding: 2.5rem;
+    border-top: 4px solid #D62828;
+    text-align: center;
+    min-width: 320px;
 }
-.VAIWATTText {
-    color: rgb(255, 153, 241); 
-    text-shadow: 5px 5px 5px rgb(2, 0, 71)
+
+.popup-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: #F2EDE4;
+    margin: 0 0 1.5rem;
 }
-.THEPORTALText {
-    color: rgb(63, 41, 25);
-    text-shadow: 5px 5px 5px rgb(26, 112, 36)
+
+.close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #888;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: color 0.2s;
 }
-.KONNICHIWATYPHOONText {
-    color: rgb(255, 230, 0);
-    text-shadow: 5px 5px 5px rgb(255, 149, 0)
+
+.close:hover {
+    color: #D62828;
 }
-.NORTHERNPELEText {
-    color: rgb(0, 171, 214);
-    text-shadow: 5px 5px 5px rgb(255, 255, 255)
+
+input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    background: #222;
+    border: 1px solid #333;
+    color: #F2EDE4;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
 }
-.MODERNOLDText {
-    color:rgb(176, 34, 61);
-    text-shadow: 5px 5px 5px rgb(62, 129,176);
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: #D62828;
 }
-.BDBText{
-    color:rgb(118, 0, 21);
-    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+
+#subscribeSubmit {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #D62828;
+    color: #F2EDE4;
+    border: none;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
 }
+
+#subscribeSubmit:hover {
+    background-color: #b01f1f;
+}
+
+/* ===========================
+   LEGACY FONT FACES (kept for fallback)
+=========================== */
+@font-face { font-family: 'AmericanTypewriter'; src: url(/fonts/americantypewriter.ttf); }
+@font-face { font-family: 'MexicanWedding'; src: url(/fonts/MexicanWedding.ttf); }
+@font-face { font-family: 'aresmodernos'; src: url(/fonts/aresmodernos.ttf); }
+@font-face { font-family: 'FreedomChanges'; src: url(/fonts/freedomchanges.ttf); }
+@font-face { font-family: 'firstwave'; src: url(/fonts/firstwave.otf); }
+@font-face { font-family: 'theshire'; src: url(/fonts/theshire.ttf); }
+
+/* ===========================
+   MOBILE
+=========================== */
+@media screen and (max-width: 1024px) {
+    .BDBContainer,
+    .MODERNOLDContainer,
+    .NORTHERNPELEContainer,
+    .KONNICHIWATYPHOONContainer,
+    .THEPORTALContainer,
+    .VAIWATTContainer,
+    .FUQAContainer,
+    .welcomeToBenzaitenContainer {
+        background-attachment: scroll;
+    }
+
+    .ham-menu {
+        height: 32px;
+        width: 32px;
+        top: 14px;
+        right: 16px;
+        padding: 6px 0;
+    }
+
+    .off-screen-menu {
+        max-width: 320px;
+        right: -320px;
+    }
+
+    .off-screen-menu.active {
+        right: 0;
+    }
+
+    .BDBText,
+    .MODERNOLDText,
+    .NORTHERNPELEText,
+    .KONNICHIWATYPHOONText,
+    .THEPORTALText,
+    .VAIWATTText,
+    .FUQAText,
+    .welcomeToBenzaitenText {
+        font-size: clamp(2.5rem, 12vw, 5rem);
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
 }

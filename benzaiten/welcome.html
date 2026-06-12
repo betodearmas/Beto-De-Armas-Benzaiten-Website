@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/styles/style_article.css">
 
   <style>
-  .welcometobenzaitencontainer {
-    background-image: url('/images/welcometobenzaiten.jpg');
+  .article-hero {
+    background-image: url('/images/welcometobenzaiten.webp');
   }
   </style>
 </head>
@@ -32,13 +32,13 @@
 
 <body>
 
-<div class="welcometobenzaitencontainer">
+<div class="article-hero">
   <h1 data-i18n="title"></h1>
 </div>
 
 <h3 data-i18n="date"></h3>
 
-<div class="welcometobenzaitentextcontainer">
+<div class="article-body">
   <p data-i18n="p1"></p>
   <p data-i18n="p2"></p>
   <p data-i18n="p3"></p>
@@ -51,6 +51,8 @@
 
 <section class="comments-section">
   <h2 data-i18n="comments_title"></h2>
+
+  <div id="comments-list" class="comments-list"></div>
 
   <form class="comments-form">
     <div class="form-group">
@@ -122,5 +124,8 @@ document.querySelectorAll("[data-i18n]").forEach(el => {
 </script>
 <script src="/script.js"></script>
 
+
+<script src="/scripts/comments.js"></script>
+<script>initComments("welcome");</script>
 </body>
 </html>

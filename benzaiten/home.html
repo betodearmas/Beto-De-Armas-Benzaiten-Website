@@ -29,12 +29,15 @@
 </header>
 
 <!--BAND ARTICLE SPACE-->
-    <img src="/images/benzaiten top.jpg" alt="header-image">
-    <div class="headerContainer">
-        <h1>BENZAITEN</h1>
-    </div>
-    <div class="subheaderContainer">
-    <h2 data-i18n="subheader"></h2>
+    <div class="masthead">
+        <div class="masthead-top-rule"></div>
+        <img class="masthead-img" src="/images/benzaiten top.jpg" alt="Benzaiten logo">
+        <div class="headerContainer">
+            <h1>BENZAITEN</h1>
+        </div>
+        <div class="subheaderContainer">
+            <h2 data-i18n="subheader"></h2>
+        </div>
     </div>
 
     <div class="BDBContainer">
@@ -66,7 +69,7 @@
     </div>
 
     <div class="welcomeToBenzaitenContainer">
-        <a href="welcome.html" class="welcomeToBenzaitenText">—-Welcome to Benzaiten—-<br>弁財天</a>
+        <a href="welcome.html" class="welcomeToBenzaitenText">Welcome to Benzaiten</a>
     </div>
 
     <!--POP-UP-->
@@ -83,6 +86,44 @@
 
     
     <!--SCRIPT-->
+
+<script>
+const SUPABASE_URL = 'https://noaewfpgxhbpkxxucrdj.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vYWV3ZnBneGhicGt4eHVjcmRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMzMwNjUsImV4cCI6MjA5NjgwOTA2NX0.L7-NfXEanaXaGNtOgK0EN96URG4tip5C1wyhaw760uo';
+
+document.getElementById('subscriptionForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const btn = this.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
+        method: 'POST',
+        headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            Prefer: 'return=minimal'
+        },
+        body: JSON.stringify({ email })
+    });
+
+    if (res.ok) {
+        btn.textContent = 'Subscribed!';
+        document.getElementById('email').value = '';
+        setTimeout(() => document.getElementById('popup').style.display = 'none', 1500);
+    } else if (res.status === 409) {
+        btn.textContent = 'Already subscribed';
+        setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 2000);
+    } else {
+        btn.textContent = 'Something went wrong';
+        setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 2000);
+    }
+});
+</script>
 
 <script src="../script.js"></script>
 <script>
