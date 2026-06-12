@@ -268,7 +268,7 @@ nav {
     display: block;
     height: 4px;
     width: 0;
-    background-color: #D62828;
+    background-color: #ffffff;
     transition: width 0.3s ease;
     margin-top: 0.25rem;
 }

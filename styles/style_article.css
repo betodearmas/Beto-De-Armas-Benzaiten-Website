@@ -39,13 +39,9 @@ nav {
 .ham-menu span {
     height: 3px;
     width: 100%;
-    background-color: #F2EDE4;
+    background-color: #111;
     display: block;
     transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.scrolled .ham-menu span {
-    background-color: #111;
 }
 
 .ham-menu.active span:nth-child(1) {
@@ -62,7 +58,7 @@ nav {
    OFF-SCREEN MENU
 =========================== */
 .off-screen-menu {
-    background-color: #111;
+    background-color: rgb(176, 57, 79);
     height: 100vh;
     width: 100%;
     max-width: 400px;
@@ -77,7 +73,6 @@ nav {
     font-size: 2.5rem;
     transition: right 0.4s cubic-bezier(0.77,0,0.18,1);
     z-index: 999;
-    border-left: 4px solid #D62828;
 }
 
 .off-screen-menu ul.menu-list {
