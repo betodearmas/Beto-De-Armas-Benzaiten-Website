@@ -45,29 +45,4 @@ document.addEventListener("DOMContentLoaded", function () {
         popup.style.display = "none";
     });
 
-    // Handle form submit
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const email = document.getElementById("email").value;
-
-        fetch("https://script.google.com/macros/s/AKfycbzA3YgAJEQtO2hoFEi7G5JOxHM26N_exjo6kkJMUBiB3UfaP9EELBCI5rxKD65RwkNQvg/exec", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: "email=" + encodeURIComponent(email)
-        })
-        .then(res => res.text())
-        .then(data => {
-            if (data.includes("Success")) {
-                alert("Subscribed!");
-                form.reset();
-                popup.style.display = "none";
-            } else {
-                alert("Error. Try again.");
-            }
-        })
-        .catch(() => {
-            alert("Submission failed.");
-        });
-    });
 });
