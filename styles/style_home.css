@@ -205,15 +205,27 @@ nav {
     align-items: flex-end;
 }
 
-.MINUSHAContainer       { background-image: url('/images/mina.webp'); }
-.BDBContainer           { background-image: url('/images/BDB.JPG'); }
-.MODERNOLDContainer     { background-image: url('/images/modernold.webp'); }
-.NORTHERNPELEContainer  { background-image: url('/images/NorthernPele.jpeg'); }
-.KONNICHIWATYPHOONContainer { background-image: url('/images/KT.webp'); }
-.THEPORTALContainer     { background-image: url('/images/THEPORTAL.jpg'); }
-.VAIWATTContainer       { background-image: url('/images/Vaiwatt-2021-photo-by-Anna-Shivarnova.webp'); }
-.FUQAContainer          { background-image: url('/images/FUQA.jpg'); }
-.welcomeToBenzaitenContainer { background-image: url('/images/welcometobenzaiten.webp'); }
+.MINUSHAContainer            { background-image: url('/images/webp/mina-desktop.webp'); }
+.BDBContainer                { background-image: url('/images/webp/BDB-desktop.webp'); }
+.MODERNOLDContainer          { background-image: url('/images/webp/modernold-desktop.webp'); }
+.NORTHERNPELEContainer       { background-image: url('/images/webp/NorthernPele-desktop.webp'); }
+.KONNICHIWATYPHOONContainer  { background-image: url('/images/webp/KT-desktop.webp'); }
+.THEPORTALContainer          { background-image: url('/images/webp/THEPORTAL-desktop.webp'); }
+.VAIWATTContainer            { background-image: url('/images/webp/Vaiwatt-desktop.webp'); }
+.FUQAContainer               { background-image: url('/images/webp/FUQA-desktop.webp'); }
+.welcomeToBenzaitenContainer  { background-image: url('/images/webp/welcometobenzaiten-desktop.webp'); }
+
+@media (max-width: 768px) {
+  .MINUSHAContainer            { background-image: url('/images/webp/mina-mobile.webp'); }
+  .BDBContainer                { background-image: url('/images/webp/BDB-mobile.webp'); }
+  .MODERNOLDContainer          { background-image: url('/images/webp/modernold-mobile.webp'); }
+  .NORTHERNPELEContainer       { background-image: url('/images/webp/NorthernPele-mobile.webp'); }
+  .KONNICHIWATYPHOONContainer  { background-image: url('/images/webp/KT-mobile.webp'); }
+  .THEPORTALContainer          { background-image: url('/images/webp/THEPORTAL-mobile.webp'); }
+  .VAIWATTContainer            { background-image: url('/images/webp/Vaiwatt-mobile.webp'); }
+  .FUQAContainer               { background-image: url('/images/webp/FUQA-mobile.webp'); }
+  .welcomeToBenzaitenContainer  { background-image: url('/images/webp/welcometobenzaiten-mobile.webp'); }
+}
 
 /* dark gradient on bottom of each section */
 .MINUSHAContainer::after,
