@@ -195,6 +195,7 @@ nav {
     display: flex;
     height: auto;
     padding-top: 50vh;
+    padding-top: 50svh;
     position: relative;
     background-size: cover;
     background-position: center center;
