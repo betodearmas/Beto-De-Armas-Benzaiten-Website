@@ -204,7 +204,7 @@ nav {
     align-items: flex-end;
 }
 
-.MINUSHAContainer       { background-image: url('/images/mina.jpg'); }
+.MINUSHAContainer       { background-image: url('/images/mina.webp'); }
 .BDBContainer           { background-image: url('/images/BDB.JPG'); }
 .MODERNOLDContainer     { background-image: url('/images/modernold.png'); }
 .NORTHERNPELEContainer  { background-image: url('/images/NorthernPele.jpeg'); }
@@ -380,7 +380,7 @@ input[type="email"]:focus {
 }
 
 /* ===========================
-   LEGACY FONT FACES (kept for fallback)
+FONT
 =========================== */
 @font-face { font-family: 'AmericanTypewriter'; src: url(/fonts/americantypewriter.ttf); }
 @font-face { font-family: 'MexicanWedding'; src: url(/fonts/MexicanWedding.ttf); }
