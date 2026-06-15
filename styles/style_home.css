@@ -207,7 +207,7 @@ nav {
 
 .MINUSHAContainer       { background-image: url('/images/mina.webp'); }
 .BDBContainer           { background-image: url('/images/BDB.JPG'); }
-.MODERNOLDContainer     { background-image: url('/images/modernold.png'); }
+.MODERNOLDContainer     { background-image: url('/images/modernold.webp'); }
 .NORTHERNPELEContainer  { background-image: url('/images/NorthernPele.jpeg'); }
 .KONNICHIWATYPHOONContainer { background-image: url('/images/KT.webp'); }
 .THEPORTALContainer     { background-image: url('/images/THEPORTAL.jpg'); }
@@ -425,13 +425,16 @@ FONT
 
     .BDBText,
     .MODERNOLDText,
-    .NORTHERNPELEText,
     .KONNICHIWATYPHOONText,
     .THEPORTALText,
     .VAIWATTText,
     .FUQAText,
     .welcomeToBenzaitenText {
         font-size: clamp(2.5rem, 12vw, 5rem);
+    }
+
+    .NORTHERNPELEText {
+        font-size: clamp(1.8rem, 7.5vw, 5rem);
         bottom: 1.5rem;
         left: 1.5rem;
     }
