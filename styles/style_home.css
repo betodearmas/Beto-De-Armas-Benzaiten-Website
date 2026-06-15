@@ -182,6 +182,7 @@ nav {
 /* ===========================
    PARALLAX BAND SECTIONS
 =========================== */
+.MINUSHAContainer,
 .BDBContainer,
 .MODERNOLDContainer,
 .NORTHERNPELEContainer,
@@ -203,6 +204,7 @@ nav {
     align-items: flex-end;
 }
 
+.MINUSHAContainer       { background-image: url('/images/mina.jpg'); }
 .BDBContainer           { background-image: url('/images/BDB.JPG'); }
 .MODERNOLDContainer     { background-image: url('/images/modernold.png'); }
 .NORTHERNPELEContainer  { background-image: url('/images/NorthernPele.jpeg'); }
@@ -213,6 +215,7 @@ nav {
 .welcomeToBenzaitenContainer { background-image: url('/images/welcometobenzaiten.webp'); }
 
 /* dark gradient on bottom of each section */
+.MINUSHAContainer::after,
 .BDBContainer::after,
 .MODERNOLDContainer::after,
 .NORTHERNPELEContainer::after,
@@ -234,6 +237,7 @@ nav {
 /* ===========================
    BAND NAME LABELS
 =========================== */
+.MINUSHAText,
 .BDBText,
 .MODERNOLDText,
 .NORTHERNPELEText,
@@ -256,6 +260,7 @@ nav {
     text-shadow: none;
 }
 
+.MINUSHAText::after,
 .BDBText::after,
 .MODERNOLDText::after,
 .NORTHERNPELEText::after,
@@ -273,6 +278,7 @@ nav {
     margin-top: 0.25rem;
 }
 
+.MINUSHAText:hover,
 .BDBText:hover,
 .MODERNOLDText:hover,
 .NORTHERNPELEText:hover,
@@ -294,6 +300,10 @@ nav {
 .FUQAText:hover::after,
 .welcomeToBenzaitenText:hover::after {
     width: 100%;
+}
+
+.MINUSHAText {
+    font-family: 'barbossa', sans-serif;
 }
 
 /* ===========================
@@ -376,6 +386,7 @@ input[type="email"]:focus {
 /* ===========================
    LEGACY FONT FACES (kept for fallback)
 =========================== */
+@font-face { font-family: 'barbossa'; src: url(/fonts/barbossa.ttf); }
 @font-face { font-family: 'AmericanTypewriter'; src: url(/fonts/americantypewriter.ttf); }
 @font-face { font-family: 'MexicanWedding'; src: url(/fonts/MexicanWedding.ttf); }
 @font-face { font-family: 'aresmodernos'; src: url(/fonts/aresmodernos.ttf); }
@@ -387,6 +398,7 @@ input[type="email"]:focus {
    MOBILE
 =========================== */
 @media screen and (max-width: 1024px) {
+    .MINUSHAContainer,
     .BDBContainer,
     .MODERNOLDContainer,
     .NORTHERNPELEContainer,
