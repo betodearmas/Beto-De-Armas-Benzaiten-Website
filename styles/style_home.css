@@ -302,10 +302,6 @@ nav {
     width: 100%;
 }
 
-.MINUSHAText {
-    font-family: 'barbossa', sans-serif;
-}
-
 /* ===========================
    SUBSCRIBE POP-UP
 =========================== */
@@ -386,7 +382,6 @@ input[type="email"]:focus {
 /* ===========================
    LEGACY FONT FACES (kept for fallback)
 =========================== */
-@font-face { font-family: 'barbossa'; src: url(/fonts/barbossa.ttf); }
 @font-face { font-family: 'AmericanTypewriter'; src: url(/fonts/americantypewriter.ttf); }
 @font-face { font-family: 'MexicanWedding'; src: url(/fonts/MexicanWedding.ttf); }
 @font-face { font-family: 'aresmodernos'; src: url(/fonts/aresmodernos.ttf); }
