@@ -352,6 +352,18 @@ a:hover {
 #hero-new-release { color: #ffffff; }
 #hero-new-release:hover { color: #e87050; }
 
+::selection {
+  background: brown;
+  color: white;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: brown;
+  color: white;
+  text-shadow: none;
+}
+
 @media screen and (max-width: 768px) {
   .disc-section {
     height: auto;
@@ -533,4 +545,5 @@ footer {
   margin-top: 3vh;
   font-size: 11px;
 }
+
 }
