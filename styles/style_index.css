@@ -353,8 +353,8 @@ a:hover {
 #hero-new-release:hover { color: #e87050; }
 
 ::selection {
-  background: brown;
-  color: white;
+  background: #166534;
+  color: #F2EDE4;
   text-shadow: none;
 }
 

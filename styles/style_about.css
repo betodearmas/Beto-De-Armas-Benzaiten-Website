@@ -122,7 +122,8 @@ footer{
 }
 
 ::selection {
-  background-color: brown; /* Change this to your desired background color */
+  background-color: #166534;
+  color: #F2EDE4;
 }
 
 /* For Firefox compatibility */
