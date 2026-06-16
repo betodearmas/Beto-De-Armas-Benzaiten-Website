@@ -73,7 +73,7 @@ nav {
     font-size: 2.5rem;
     transition: right 0.4s cubic-bezier(0.77,0,0.18,1);
     z-index: 999;
-    border-left: 4px solid #3B82F6;
+    border-left: 4px solid #166534;
 }
 
 .off-screen-menu ul.menu-list {
@@ -102,7 +102,7 @@ nav {
 }
 
 .menu-list a:hover {
-    color: #3B82F6;
+    color: #166534;
 }
 
 .off-screen-menu.active {
@@ -175,7 +175,7 @@ h3::after {
     display: block;
     width: 3rem;
     height: 3px;
-    background: #3B82F6;
+    background: #166534;
     margin-top: 0.75rem;
 }
 
@@ -259,9 +259,9 @@ h3::after {
 }
 
 .social-link:hover {
-    background-color: #3B82F6;
+    background-color: #166534;
     color: #F2EDE4;
-    border-color: #3B82F6;
+    border-color: #166534;
     z-index: 1;
     position: relative;
 }
@@ -323,7 +323,7 @@ h3::after {
 
 #nextbutton:hover,
 #previousbutton:hover {
-    background-color: #3B82F6;
+    background-color: #166534;
     color: #F2EDE4;
     font-style: normal;
     transform: none;
@@ -436,7 +436,7 @@ h3::after {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #3B82F6;
+    border-color: #166534;
 }
 
 #submitbutton {
@@ -453,7 +453,7 @@ h3::after {
 }
 
 #submitbutton:hover {
-    background-color: #3B82F6;
+    background-color: #166534;
 }
 
 /* ===========================
