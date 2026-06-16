@@ -29,7 +29,7 @@ body, html {
 .masthead-top-rule {
     width: 100%;
     height: 8px;
-    background-color: #c084fc;
+    background-color: #3B82F6;
     position: absolute;
     top: 0;
     left: 0;
@@ -143,7 +143,7 @@ nav {
     font-size: 2.5rem;
     transition: right 0.4s cubic-bezier(0.77,0,0.18,1);
     z-index: 999;
-    border-left: 4px solid #c084fc;
+    border-left: 4px solid #3B82F6;
 }
 
 .off-screen-menu ul.menu-list {
@@ -172,7 +172,7 @@ nav {
 }
 
 .menu-list a:hover {
-    color: #c084fc;
+    color: #3B82F6;
 }
 
 .off-screen-menu.active {
@@ -331,7 +331,7 @@ nav {
     position: relative;
     background-color: #111;
     padding: 2.5rem;
-    border-top: 4px solid #c084fc;
+    border-top: 4px solid #3B82F6;
     text-align: center;
     min-width: 320px;
 }
@@ -356,7 +356,7 @@ nav {
 }
 
 .close:hover {
-    color: #c084fc;
+    color: #3B82F6;
 }
 
 input[type="email"] {
@@ -372,13 +372,13 @@ input[type="email"] {
 
 input[type="email"]:focus {
     outline: none;
-    border-color: #c084fc;
+    border-color: #3B82F6;
 }
 
 #subscribeSubmit {
     width: 100%;
     padding: 0.75rem;
-    background-color: #c084fc;
+    background-color: #3B82F6;
     color: #F2EDE4;
     border: none;
     cursor: pointer;
