@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Band Posters — Beto de Armas</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    header {
+      padding: 2rem 2rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header h1 {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    header a {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    header a:hover { color: #fff; }
+
+    .mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 280px;
+      gap: 4px;
+      padding: 4px;
+    }
+
+    .mosaic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.25s;
+    }
+
+    .mosaic img:hover { opacity: 0.75; }
+
+    .wide { grid-column: span 4; }
+    .tall { grid-row: span 2; }
+    .med  { grid-column: span 2; }
+
+    /* ── LIGHTBOX ── */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    #lightbox.open { display: flex; }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    #lightbox-close {
+      position: fixed;
+      top: 1.2rem; right: 1.5rem;
+      font-size: 2rem;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+
+    #lightbox-close:hover { color: #fff; }
+
+    @media (max-width: 700px) {
+      .mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+      }
+      .wide { grid-column: span 2; }
+      .med  { grid-column: span 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Band Posters — Aztec Brides</h1>
+    <a href="portfolio.html">← Back</a>
+  </header>
+
+  <div class="mosaic">
+
+    <img class="wide"      src="images/posters/AZB BANNER_MK2.png"             alt="AZB BANNER MK2" style="object-position: top;">
+
+    <img class="tall"      src="images/posters/AZB in MANILA.png"               alt="AZB in MANILA">
+    <img                   src="images/posters/AZB at ANTIKNOCK 11:21.png"      alt="AZB at ANTIKNOCK">
+    <img                   src="images/posters/AZB at BAUHAUS 3:22.png"         alt="AZB at BAUHAUS">
+    <img class="tall"      src="images/posters/AZB at MUNI FES 2026.png"        alt="AZB at MUNI FES 2026">
+    <img                   src="images/posters/AZB at CLUB ROSSO.png"           alt="AZB at CLUB ROSSO">
+    <img                   src="images/posters/AZB at FLAT 11:28.png"           alt="AZB at FLAT">
+
+    <img class="med"       src="images/posters/AZB BANNER_MK1.png"              alt="AZB BANNER MK1">
+    <img                   src="images/posters/AZB at Gamuso 11:01.png"         alt="AZB at Gamuso">
+    <img                   src="images/posters/AZB at HEAVENS DOOR 6:20.png"    alt="AZB at HEAVENS DOOR">
+
+    <img class="tall"      src="images/posters/AZB at Heavens Door 10:18.png"   alt="AZB at Heavens Door Oct 18">
+    <img                   src="images/posters/AZB at Heavens Door 1:18.png"    alt="AZB at Heavens Door Jan 18">
+    <img                   src="images/posters/AZB at Heavens Door 4:12.png"    alt="AZB at Heavens Door Apr 12">
+    <img class="tall"      src="images/posters/AZB at SHINLOFT 11:24.png"       alt="AZB at SHINLOFT Nov 24">
+    <img class="med"       src="images/posters/AZB at RR 3:19.png"              alt="AZB at RR">
+
+    <img class="med"       src="images/posters/AZB at MUNI FES 2024.png"        alt="AZB at MUNI FES 2024">
+    <img                   src="images/posters/AZB at SHINLOFT 11:30.png"       alt="AZB at SHINLOFT Nov 30">
+    <img                   src="images/posters/AZB at THREE 2:8.png"            alt="AZB at THREE">
+
+    <img                   src="images/posters/AZB at YAMANAKAKO.png"           alt="AZB at YAMANAKAKO">
+    <img class="tall"      src="images/posters/AZB dans FDM.I.F. 2026png.png"   alt="AZB dans FDM.I.F. 2026">
+    <img                   src="images/posters/AZB at the Den 10.17.png"        alt="AZB at the Den">
+    <img                   src="images/posters/AZB at DEN 4:25:26.jpg"          alt="AZB at DEN">
+    <img                   src="images/posters/AZB at AUBE ZUNCHAKA 6:8.png"    alt="AZB at AUBE ZUNCHAKA">
+
+    <img class="tall"      src="images/posters/AZB Black Light 09:28.png"       alt="AZB Black Light">
+    <img                   src="images/posters/AZB LIVE NATION 110.png"         alt="AZB LIVE NATION">
+    <img                   src="images/posters/AZB POSTER MERCH.png"            alt="AZB POSTER MERCH">
+    <img class="med"       src="images/posters/AZB RR 1:14.png"                 alt="AZB RR">
+
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button id="lightbox-close">&#215;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    var lb      = document.getElementById('lightbox');
+    var lbImg   = document.getElementById('lightbox-img');
+    var images  = Array.from(document.querySelectorAll('.mosaic img'));
+    var current = 0;
+
+    images.forEach(function(img, i) {
+      img.addEventListener('click', function() { open(i); });
+    });
+
+    function open(i) {
+      current = i;
+      lbImg.src = images[current].src;
+      lbImg.alt = images[current].alt;
+      lb.classList.add('open');
+    }
+
+    function prev() { open((current - 1 + images.length) % images.length); }
+    function next() { open((current + 1) % images.length); }
+
+    function close() { lb.classList.remove('open'); lbImg.src = ''; }
+
+    document.getElementById('lightbox-close').addEventListener('click', close);
+    lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function(e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')      close();
+      if (e.key === 'ArrowLeft')   prev();
+      if (e.key === 'ArrowRight')  next();
+    });
+  </script>
+
+</body>
+</html>
