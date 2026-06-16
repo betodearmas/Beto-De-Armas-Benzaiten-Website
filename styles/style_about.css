@@ -123,10 +123,11 @@ footer{
 
 ::selection {
   background-color: #166534;
-  color: #F2EDE4;
+  color: #ffffff;
 }
 
 /* For Firefox compatibility */
 ::-moz-selection {
-  background-color: brown;
+  background-color: #166534;
+  color: #ffffff;
 }
