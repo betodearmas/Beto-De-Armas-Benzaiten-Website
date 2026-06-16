@@ -27,7 +27,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 6px;
-    background-color: #D62828;
+    background-color: #c084fc;
 }
 
 .welcomelogo {
@@ -81,8 +81,8 @@ body, html {
 }
 
 .landing-button:hover {
-    background-color: #D62828;
-    border-color: #D62828;
+    background-color: #c084fc;
+    border-color: #c084fc;
     color: #F2EDE4;
     transform: none;
 }
