@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
-@keyframes page-enter {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+@view-transition {
+    navigation: auto;
 }
 
-body {
-    animation: page-enter 0.35s ease;
+::view-transition-old(band-hero) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+::view-transition-new(band-hero) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+    animation: none;
+}
+@keyframes article-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+::view-transition-new(root) {
+    animation: 0.45s ease article-fade-in;
 }
 
 /* ===========================
@@ -16,11 +30,7 @@ body {
     box-sizing: border-box;
 }
 
-html {
-    background-color: #111;
-}
-
-body {
+body, html {
     margin: 0;
     padding: 0;
     background-color: #F2EDE4;
@@ -135,6 +145,7 @@ nav {
     overflow: hidden;
     display: flex;
     align-items: flex-end;
+    view-transition-name: band-hero;
 }
 
 .article-hero::after {

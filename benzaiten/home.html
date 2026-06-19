@@ -132,54 +132,21 @@ document.getElementById('subscriptionForm').addEventListener('submit', async fun
 });
 </script>
 
-<script src="../script.js"></script>
 <script>
-(function () {
-    const containers = document.querySelectorAll(
-        '.MINUSHAContainer, .BDBContainer, .MODERNOLDContainer, ' +
-        '.NORTHERNPELEContainer, .KONNICHIWATYPHOONContainer, ' +
-        '.THEPORTALContainer, .VAIWATTContainer, .FUQAContainer, ' +
-        '.welcomeToBenzaitenContainer'
-    );
-
-    containers.forEach(function (container) {
-        var link = container.querySelector('a');
-        if (!link) return;
-
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            var href = link.getAttribute('href');
-            var rect = container.getBoundingClientRect();
-            var style = window.getComputedStyle(container);
-            var bgImage = style.backgroundImage;
-
-            var overlay = document.createElement('div');
-            var top    = Math.round(rect.top);
-            var right  = Math.round(window.innerWidth  - rect.right);
-            var bottom = Math.round(window.innerHeight - rect.bottom);
-            var left   = Math.round(rect.left);
-
-            overlay.style.cssText =
-                'position:fixed;inset:0;z-index:9999;' +
-                'background-image:' + bgImage + ';' +
-                'background-size:cover;background-position:center center;' +
-                'clip-path:inset(' + top + 'px ' + right + 'px ' + bottom + 'px ' + left + 'px);' +
-                'transition:clip-path 0.52s cubic-bezier(0.76,0,0.24,1);' +
-                'will-change:clip-path;';
-
-            document.body.appendChild(overlay);
-
-            // Force reflow so the transition fires from the starting clip
-            overlay.getBoundingClientRect();
-            overlay.style.clipPath = 'inset(0px 0px 0px 0px)';
-
-            setTimeout(function () {
-                window.location.href = href;
-            }, 540);
-        });
+// Set view-transition-name on the clicked band container so the browser
+// can morph it into the article hero on navigation.
+document.querySelectorAll(
+    '.MINUSHAContainer, .BDBContainer, .MODERNOLDContainer, ' +
+    '.NORTHERNPELEContainer, .KONNICHIWATYPHOONContainer, ' +
+    '.THEPORTALContainer, .VAIWATTContainer, .FUQAContainer, ' +
+    '.welcomeToBenzaitenContainer'
+).forEach(container => {
+    container.querySelector('a').addEventListener('click', () => {
+        container.style.viewTransitionName = 'band-hero';
     });
-})();
+});
 </script>
+<script src="../script.js"></script>
 <script>
         const translations = {
   en: {
