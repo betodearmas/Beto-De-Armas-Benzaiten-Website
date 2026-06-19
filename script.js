@@ -1,3 +1,12 @@
+/* PAGE TRANSITION FADE-IN */
+if (sessionStorage.getItem('pt') && document.documentElement.style.opacity === '0') {
+    sessionStorage.removeItem('pt');
+    requestAnimationFrame(function () {
+        document.documentElement.style.transition = 'opacity 0.4s ease';
+        document.documentElement.style.opacity = '1';
+    });
+}
+
 /*HAM MENU*/
 
 document.addEventListener('DOMContentLoaded', function() {
