@@ -1,24 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
-@view-transition {
-    navigation: auto;
-}
-
-::view-transition-old(band-hero) {
-    animation: none;
-    mix-blend-mode: normal;
-}
-::view-transition-new(band-hero) {
-    animation: none;
-    mix-blend-mode: normal;
-}
-::view-transition-new(root) {
-    animation: none;
-}
-::view-transition-old(root) {
-    animation: none;
-}
-
 /* ===========================
    BASE
 =========================== */
