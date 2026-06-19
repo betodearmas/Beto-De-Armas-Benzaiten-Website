@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&display=swap');
 
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(band-hero) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+::view-transition-new(band-hero) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+    animation: none;
+}
+@keyframes article-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+::view-transition-new(root) {
+    animation: 0.45s ease article-fade-in;
+}
+
 /* ===========================
    BASE
 =========================== */
@@ -122,6 +145,7 @@ nav {
     overflow: hidden;
     display: flex;
     align-items: flex-end;
+    view-transition-name: band-hero;
 }
 
 .article-hero::after {
