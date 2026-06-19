@@ -416,6 +416,9 @@ FONT
     .FUQAContainer,
     .welcomeToBenzaitenContainer {
         background-attachment: scroll;
+        height: 100vh;
+        height: 100svh;
+        padding-top: 0;
     }
 
     .ham-menu {
