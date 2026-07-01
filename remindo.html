@@ -5820,17 +5820,6 @@
       })
       (container);
 
-    // globe.gl sets pointer-events:none on its HTML overlay — enable only that layer
-    setTimeout(() => {
-      const flagEls = container.querySelectorAll('[title]');
-      flagEls.forEach(el => {
-        let p = el.parentElement;
-        while (p && p !== container) {
-          p.style.pointerEvents = 'auto';
-          p = p.parentElement;
-        }
-      });
-    }, 800);
 
     const ctrl = globe.controls();
     ctrl.enableDamping = false;
