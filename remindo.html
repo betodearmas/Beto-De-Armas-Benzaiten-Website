@@ -40,14 +40,22 @@
 
     /* HERO */
     .hero {
-      min-height: 100dvh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 8rem 2rem 4rem; position: relative;
+      height: 100dvh; position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
     }
-    .hero::before {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,107,138,0.12) 0%, transparent 70%);
-      pointer-events: none;
+    .hero::after {
+      content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none; z-index: 2;
+    }
+    #globe-embed {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; padding: 2rem;
     }
     .hero-tag {
       display: inline-block; font-size: 0.7rem; letter-spacing: 0.22em;
@@ -74,20 +82,11 @@
       transition: opacity 0.2s, transform 0.2s;
     }
     .hero-cta:hover { opacity: 0.88; transform: translateY(-2px); }
-
-    /* GLOBE EMBED */
-    .globe-wrap {
-      margin-top: 4rem; position: relative;
-      width: min(540px, 92vw); height: 480px;
-      border-radius: 32px; overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.07), 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(255,107,138,0.12);
-    }
-    #globe-embed { width: 100%; height: 100%; }
     .globe-hint {
-      position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 3.5rem; left: 50%; transform: translateX(-50%);
       font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.3); pointer-events: none; white-space: nowrap;
-      transition: opacity 0.4s;
+      color: rgba(255,255,255,0.35); pointer-events: none; white-space: nowrap;
+      z-index: 3; transition: opacity 0.4s;
     }
     .globe-hint.hidden { opacity: 0; }
 
@@ -187,15 +186,14 @@
   </nav>
 
   <section class="hero">
-    <span class="hero-tag">iOS App</span>
-    <h1 class="hero-title">Never miss<br>a holiday.</h1>
-    <p class="hero-sub">Remindo covers the holidays the other apps forget — from national observances to obscure cultural dates. Every country, every celebration, always on time.</p>
-    <a href="#features" class="hero-cta">See what it does</a>
-
-    <div class="globe-wrap">
-      <div id="globe-embed"></div>
-      <p class="globe-hint" id="globe-hint">Click a flag to see holidays</p>
+    <div id="globe-embed"></div>
+    <div class="hero-content">
+      <span class="hero-tag">iOS App</span>
+      <h1 class="hero-title">Never miss<br>a holiday.</h1>
+      <p class="hero-sub">Remindo covers the holidays the other apps forget — from national observances to obscure cultural dates. Every country, every celebration, always on time.</p>
+      <a href="#features" class="hero-cta">See what it does</a>
     </div>
+    <p class="globe-hint" id="globe-hint">Click a flag to see holidays</p>
   </section>
 
   <div id="bubble">
@@ -5784,13 +5782,13 @@
   const container = document.getElementById('globe-embed');
 
   const globe = Globe()
-    .width(container.clientWidth)
-    .height(container.clientHeight)
+    .width(window.innerWidth)
+    .height(window.innerHeight)
     .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
-    .backgroundImageUrl(null)
+    .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
     .backgroundColor('rgba(0,0,0,0)')
-    .atmosphereColor('rgba(255,107,138,0.2)')
-    .atmosphereAltitude(0.15)
+    .atmosphereColor('rgba(255,107,138,0.25)')
+    .atmosphereAltitude(0.18)
     .htmlElementsData(COUNTRIES)
     .htmlElement(d => {
       const el = document.createElement('div');
@@ -5812,8 +5810,14 @@
   ctrl.autoRotateSpeed = 0.35;
   ctrl.enableZoom = false;
 
+  // Fade stars out as user scrolls away from hero
+  window.addEventListener('scroll', () => {
+    const opacity = Math.max(0, 1 - window.scrollY / window.innerHeight);
+    container.style.opacity = opacity;
+  }, { passive: true });
+
   window.addEventListener('resize', () => {
-    globe.width(container.clientWidth).height(container.clientHeight);
+    globe.width(window.innerWidth).height(window.innerHeight);
   });
   </script>
 
