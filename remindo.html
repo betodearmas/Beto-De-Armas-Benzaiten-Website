@@ -5809,7 +5809,7 @@
       .htmlElementsData(COUNTRIES)
       .htmlElement(d => {
         const el = document.createElement('div');
-        el.style.cssText = 'font-size:20px;cursor:pointer;user-select:none;line-height:1;';
+        el.style.cssText = 'font-size:20px;cursor:pointer;user-select:none;line-height:1;pointer-events:auto;';
         el.textContent = d.flag;
         el.title = d.name;
         el.addEventListener('click', e => {
@@ -5819,6 +5819,18 @@
         return el;
       })
       (container);
+
+    // globe.gl sets pointer-events:none on its HTML overlay — enable only that layer
+    setTimeout(() => {
+      const flagEls = container.querySelectorAll('[title]');
+      flagEls.forEach(el => {
+        let p = el.parentElement;
+        while (p && p !== container) {
+          p.style.pointerEvents = 'auto';
+          p = p.parentElement;
+        }
+      });
+    }, 800);
 
     const ctrl = globe.controls();
     ctrl.enableDamping = false;
